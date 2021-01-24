@@ -29,7 +29,8 @@ This project is licensed under the [GNU GPLv3](LICENSE.md).
 
 - Software
     - [Python 3.x](https://www.python.org/downloads/)
-    - gzip (For Windows OS use **Git Bash**: [Git For Windows](https://git-scm.com/download/win))
+    - Gzip & wget(recommended) / curl
+        - For Windows OS use [Git For Windows](https://git-scm.com/download/win)
     - [PostgreSQL 13](https://www.postgresql.org/download/) - [Direct Download](https://www.enterprisedb.com/downloads/postgres-postgresql-downloads)
 
 
