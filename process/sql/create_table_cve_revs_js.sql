@@ -1,4 +1,4 @@
-CREATE TABLE cve_revs_py AS
+CREATE TABLE cve_revs_js AS
 select encode(unnested_revs.message, 'escape') as msg,
        encode(unnested_revs.id, 'hex')         as git_hash,
        min(unnested_revs.committer_date)       as commit_date
