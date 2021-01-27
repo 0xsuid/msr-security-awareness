@@ -13,6 +13,9 @@ for /F %%I in ('curl -s https://annex.softwareheritage.org/public/dataset/graph/
     echo Downloading %%I & curl --progress-bar -O https://annex.softwareheritage.org/public/dataset/graph/latest/popular-4k/sql/%%I
 )
 sed -i 's/zcat/gzip -cd/g' load.sql
+echo Downloading CVE Manager
+cd %~dp0..\code\
+curl -O https://raw.githubusercontent.com/0xsuid/cve_manager/master/cve_manager.py
 echo Download Complete
 goto Menu
 
@@ -54,18 +57,28 @@ psql swhgd-popular-4k < %~dp0..\..\process\sql\create_table_cve_revs_py.sql post
 echo Successfully Created Table cve_revs_py
 goto Menu
 
-:exit
-@exit
+:cveData
+cls
+echo =================================
+echo Downloading NVD ^& Parsing CVE
+rmdir /S /Q %~dp0..\..\data\nvd
+rmdir /S /Q %~dp0..\..\data\cve_parsed
+python %~dp0..\code\cve_manager.py -d -p -csv -i  %~dp0..\..\data\nvd\ -o %~dp0..\..\data\cve_parsed\
 
 :Menu
 echo =================================
-echo 1. Download Dataset
+echo 1. Download Dataset & CVE Manager
 echo 2. Load Dataset into Database
 echo 3. Create Tables (cve_revs,cve_revs_js,cve_revs_py)
-echo 4. Exit
+echo 4. Download NVD ^& Get CVE related issues
+echo 5. Exit
 echo =================================
 set /p op=Type option:
 if "%op%"=="1" goto download
 if "%op%"=="2" goto loadDataset
 if "%op%"=="3" goto createTables
-if "%op%"=="4" goto exit
+if "%op%"=="4" goto cveData
+if "%op%"=="5" goto exit
+
+:exit
+@exit

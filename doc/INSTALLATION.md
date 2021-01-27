@@ -63,6 +63,7 @@ Note: Select options in scripts in following order:
     1. Download Dataset  
     2. Load Dataset into Database  
     3. Create Tables (cve_revs,cve_revs_js,cve_revs_py)  
+    4. Download NVD & Get CVE related issues
 
 - **For Windows**:
 

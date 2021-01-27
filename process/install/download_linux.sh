@@ -2,18 +2,19 @@
 
 function menu {
 echo "select the operation ************"
-echo "  1. Download Dataset with Wget"
-echo "  2. Download Dataset with Curl"
+echo "  1. Download Dataset & CVE Manager with Wget"
+echo "  2. Download Dataset & CVE Manager with Curl"
 echo "  3. Load Dataset into Database"
 echo "  4. Create Tables (cve_revs,cve_revs_js,cve_revs_py)"
-echo "  5. Exit" 
+echo "  5. Download NVD & Get CVE related issues"
+echo "  6. Exit" 
 
 read n
 case $n in
-    1)  echo "1. Download Dataset with Wget"
+    1)  echo "1. Download Dataset & CVE Manager with Wget"
         download_wget
         ;;
-    2)  echo "2. Download Dataset with Curl"
+    2)  echo "2. Download Dataset & CVE Manager with Curl"
         download_curl
         ;;
     3)  echo "3. Load Dataset into Database"
@@ -22,7 +23,10 @@ case $n in
     4)  echo "4. Create Tables (cve_revs,cve_revs_js,cve_revs_py)"
         create_tables
         ;;
-    5)  echo "Bye"
+    5)  echo "5. Download NVD & Get CVE related issues"
+        create_tables
+        ;;
+    6)  echo "Bye"
         exit
         ;;
     *) echo "invalid option";;
@@ -35,6 +39,8 @@ function download_wget {
     mkdir -p $(dirname "$0")/../../data/popular-4k && cd $(dirname "$0")/../../data/popular-4k
     wget -c -q --show-progress -A gz,sql -nd -r -np -nH https://annex.softwareheritage.org/public/dataset/graph/latest/popular-4k/sql/
     sed -i 's/zcat/gzip -cd/g' load.sql
+    cd $(dirname "$0")/../code/
+    wget -P ../code/ https://raw.githubusercontent.com/0xsuid/cve_manager/master/cve_manager.py
     printf "Download Complete\n"
     menu
 }
@@ -49,6 +55,8 @@ function download_curl {
         curl --progress-bar -O https://annex.softwareheritage.org/public/dataset/graph/latest/popular-4k/sql/$file
     done
     sed -i 's/zcat/gzip -cd/g' load.sql
+    cd $(dirname "$0")/../code/
+    curl -O https://raw.githubusercontent.com/0xsuid/cve_manager/master/cve_manager.py
     printf "Download Complete\n"
     menu
 }
@@ -95,6 +103,10 @@ function create_tables {
     psql swhgd-popular-4k < $(dirname "$0")/../../process/sql/create_table_cve_revs_py.sql postgres
     printf "Successfully Created Table cve_revs_py\n"
     menu
+}
+
+function get_cve_data {
+    python $(dirname "$0")/../code/cve_manager.py -d -p -csv -i $(dirname "$0")/../../data/nvd -o $(dirname "$0")/../../data/cve_parsed
 }
 
 menu

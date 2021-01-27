@@ -53,3 +53,4 @@ This project is licensed under the [GNU GPLv3](LICENSE.md).
 5. [Software Heritage Graph Dataset](https://zenodo.org/record/2583978)
 6. [Software Heritage Graph Dataset Documentation](https://docs.softwareheritage.org/devel/swh-dataset/graph/dataset.html)
 7. [Code](https://zenodo.org/record/3699486)
+8. [CVE manager](https://github.com/aatlasis/cve_manager)
