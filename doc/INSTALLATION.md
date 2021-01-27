@@ -59,7 +59,7 @@ Download "popular-4k" Dataset, Load Dataset into Database & Create Tables(cve_re
 
 Database optimization is Recommended before executing scripts.
 
-Note: Select options in scripts in following order:  
+Note: Select options one by one (in scripts) in following order:  
     1. Download Dataset  
     2. Load Dataset into Database  
     3. Create Tables (cve_revs,cve_revs_js,cve_revs_py)  
@@ -106,17 +106,31 @@ Note: Select options in scripts in following order:
 
 4. Create Tables (cve_revs,cve_revs_js,cve_revs_py):
 
-    Create cve_revs table
+    1. Create cve_revs table
+        ```
+        psql swhgd-popular-4k < process/sql/create_table_cve_revs.sql postgres
+        ```
+
+    2. Create cve_revs_js table
+        ```
+        psql swhgd-popular-4k < process/sql/create_table_cve_revs_js.sql postgres
+        ```
+
+    3. Create cve_revs_py table
+        ```
+        psql swhgd-popular-4k < process/sql/create_table_cve_revs_py.sql postgres
+        ```
+5. Download NVD & Get CVE related issues
+
+    - Download [CVE Manager](https://github.com/aatlasis/cve_manager)
+        - For Windows - [CVE Manager](https://github.com/0xsuid/cve_manager)
+    - Execute following:
     ```
-    psql swhgd-popular-4k < process/sql/create_table_cve_revs.sql postgres
+    python code/cve_manager.py -d -p -csv -i data/nvd -o data/cve_parsed
     ```
 
-    Create cve_revs_js table
-    ```
-    psql swhgd-popular-4k < process/sql/create_table_cve_revs_js.sql postgres
-    ```
+## Update CVE:
 
-    Create cve_revs_py table
-    ```
-    psql swhgd-popular-4k < process/sql/create_table_cve_revs_py.sql postgres
-    ```
+- Edit Jupyter notebook [update_cve](process/code/update_cve.ipynb)  
+    - Add database and user details  
+- Run [update_cve](process/code/update_cve.ipynb)

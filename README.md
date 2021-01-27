@@ -36,7 +36,22 @@ This project is licensed under the [GNU GPLv3](LICENSE.md).
 
 ## Process
 
+- Steps:
+    - Please Check [INSTALLATION.md](doc/INSTALLATION.md)
+
 ## Data
+
+- Input data:
+    - Software Heritage Graph Dataset - **[Popular 4k](data/popular-4k)**
+    - NIST NVD
+- Temporary data:
+    - CVE related problems
+- Output data:
+    - CVE (Common Vulnerabilities and Exposures)
+    - CWE (Common Weakness Enumeration)
+- Schema:
+    - [Relational schema](https://docs.softwareheritage.org/devel/swh-dataset/graph/schema.html)
+
 
 ## Delta
 
