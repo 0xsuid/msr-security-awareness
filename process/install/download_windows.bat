@@ -67,7 +67,7 @@ python %~dp0..\code\cve_manager.py -d -p -csv -i  %~dp0..\..\data\nvd\ -o %~dp0.
 
 :Menu
 echo =================================
-echo 1. Download Dataset & CVE Manager
+echo 1. Download Dataset ^& CVE Manager
 echo 2. Load Dataset into Database
 echo 3. Create Tables (cve_revs,cve_revs_js,cve_revs_py)
 echo 4. Download NVD ^& Get CVE related issues
