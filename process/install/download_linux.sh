@@ -80,14 +80,19 @@ function load_dataset {
 
 function create_db_index {
     printf "Loading Dataset into Database - est. time(~4-5 Hours):\n"
-    psql swhgd-popular-4k < $(dirname "$0")/../../data/popular-4k/load.sql postgres
+    cd $(dirname "$0")/../../data/popular-4k/
+    createdb -U postgres swhgd-popular-4k
+    psql -U postgres swhgd-popular-4k < load.sql
     printf "Finished Loading Dataset into Database\n"
     menu
 }
 
 function create_db_no_index {
     printf "Loading Dataset into Database - est. time(~30-45 mins):\n"
-    psql swhgd-popular-4k < $(dirname "$0")/../../process/sql/load_no_index.sql postgres
+    cp $(dirname "$0")/../../process/sql/load_no_index.sql $(dirname "$0")/../../data/popular-4k/
+    cd $(dirname "$0")/../../data/popular-4k/
+    createdb -U postgres swhgd-popular-4k
+    psql -U postgres swhgd-popular-4k < load_no_index.sql
     printf "Finished Loading Dataset into Database\n"
     menu
 }

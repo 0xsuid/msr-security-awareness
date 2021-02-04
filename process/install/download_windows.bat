@@ -32,14 +32,18 @@ if "%op%"=="2" goto CreateDbNoIndex
 :createDbIndex
 echo =================================
 echo Loading Dataset into Database - est. time(~4-5 hours):
-psql swhgd-popular-4k < %~dp0..\..\data\popular-4k\load.sql postgres
+cd %~dp0..\..\data\popular-4k
+psql swhgd-popular-4k < load.sql -U postgres
 echo Finished Loading Dataset into Database
 goto Menu
 
 :createDbNoIndex
 echo =================================
 echo Loading Dataset into Database - est. time(~30-45 mins):
-psql swhgd-popular-4k < %~dp0..\..\process\sql\load_no_index.sql postgres
+xcopy /y %~dp0..\..\process\sql\load_no_index.sql %~dp0..\..\data\popular-4k
+cd %~dp0..\..\data\popular-4k
+E:\PostgreSQL\bin\createdb -U postgres swhgd-popular-4k
+E:\PostgreSQL\bin\psql -U postgres swhgd-popular-4k < load_no_index.sql
 echo Finished Loading Dataset into Database
 goto Menu
 

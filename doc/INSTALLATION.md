@@ -75,6 +75,7 @@ Note: Select options one by one (in scripts) in following order:
 
     Note: If you issues with wget then try downloading with curl.
     ```
+    chmod +x ./process/install/download_linux.sh
     ./process/install/download_linux.sh
     ```
 
