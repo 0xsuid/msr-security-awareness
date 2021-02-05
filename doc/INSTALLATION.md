@@ -65,6 +65,8 @@ Note: Select options one by one (in scripts) in following order:
     3. Create Tables (cve_revs,cve_revs_js,cve_revs_py)  
     4. Download NVD & Get CVE related issues
 
+After completing above steps you should continue with Generate Statistics/Result.
+
 - **For Windows**:
 
     ```
@@ -132,7 +134,7 @@ Note: Select options one by one (in scripts) in following order:
     ```
     python code/cve_manager.py -d -p -csv -i data/nvd -o data/cve_parsed
     ```
-
+6. After completing above steps you should continue with Generate Statistics/Result.
 ## Generate Statistics/Result:
 
 - Edit Jupyter notebook [update_cve](process/code/update_cve.ipynb)  

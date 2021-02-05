@@ -99,13 +99,13 @@ function create_db_no_index {
 
 function create_tables {
     printf "Creating Table cve_revs - est. time(~3-4 mins)\n"
-    psql swhgd-popular-4k < $(dirname "$0")/../../process/sql/create_table_cve_revs.sql postgres
+    psql -U postgres swhgd-popular-4k < $(dirname "$0")/../../process/sql/create_table_cve_revs.sql
     printf "Successfully Created Table cve_revs\n"
     printf "Creating Table cve_revs_js - est. time(~20-30 mins)\n"
-    psql swhgd-popular-4k < $(dirname "$0")/../../process/sql/create_table_cve_revs_js.sql postgres
+    psql -U postgres swhgd-popular-4k < $(dirname "$0")/../../process/sql/create_table_cve_revs_js.sql
     printf "Successfully Created Table cve_revs_js"
     printf "Creating Table cve_revs_py - est. time(~5-10 mins)\n"
-    psql swhgd-popular-4k < $(dirname "$0")/../../process/sql/create_table_cve_revs_py.sql postgres
+    psql -U postgres swhgd-popular-4k < $(dirname "$0")/../../process/sql/create_table_cve_revs_py.sql
     printf "Successfully Created Table cve_revs_py\n"
     menu
 }
