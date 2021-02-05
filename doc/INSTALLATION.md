@@ -93,14 +93,17 @@ Note: Select options one by one (in scripts) in following order:
 
     ```
     createdb swhgd-popular-4k
-    psql swhgd-popular-4k < data/popular-4k/load.sql
+    cd data/popular-4k/
+    psql swhgd-popular-4k < load.sql
     ```
 
     2. Using NON INDEXD DB - Execution time is **~30-40 MINS**.
 
     ```
     createdb swhgd-popular-4k
-    psql swhgd-popular-4k < process/sql/load_no_index.sql
+    cp process/sql/load_no_index.sql data/popular-4k/
+    cd data/popular-4k/
+    psql swhgd-popular-4k < load_no_index.sql
     ```
 
     If you just want to explore then I would like to recommend that you should go with 2nd option - non indexed db.
@@ -130,7 +133,7 @@ Note: Select options one by one (in scripts) in following order:
     python code/cve_manager.py -d -p -csv -i data/nvd -o data/cve_parsed
     ```
 
-## Update CVE:
+## Generate Statistics/Result:
 
 - Edit Jupyter notebook [update_cve](process/code/update_cve.ipynb)  
     - Add database and user details  
