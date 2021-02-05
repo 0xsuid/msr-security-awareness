@@ -12,6 +12,11 @@ The Code[7] & Dataset[4][5] were licensed as [Creative Commons Attribution 4.0 I
 
 This project is licensed under the [GNU GPLv3](LICENSE.md).
 
+# Research Questions:
+
+- RQ1- Typical Security Issue Types
+- RQ2- Reaction Times to Security Issues 
+
 ## Requirements 
 
 - Hardware
@@ -41,12 +46,21 @@ This project is licensed under the [GNU GPLv3](LICENSE.md).
 
 ## Data
 
+- Terms:
+    - CVE (Common Vulnerabilities and Exposures)
+    - CWE (Common Weakness Enumeration)
+    - Delta (Average number of days between mitigation commit date and CVE publish date)
+
 - Input data:
     - Software Heritage Graph Dataset - **[Popular 4k](data/popular-4k)**
-    - NIST NVD
 - Temporary data:
+    - NIST NVD
     - CVE related problems
 - Output data:
+    - result_js.csv - contains git_hash,commit_date,cve_data,cwe_group,published_date,severity,impact_score for Javascript
+    - result_py.csv - contains git_hash,commit_date,cve_data,cwe_group,published_date,severity,impact_score for Python
+    - count_cwe_groups_js.csv - contains CWE & its counts for Javascript
+    - count_cwe_groups_js.csv - contains CWE & its counts for Python
     - CVE (Common Vulnerabilities and Exposures)
     - CWE (Common Weakness Enumeration)
 - Schema:
@@ -57,7 +71,26 @@ This project is licensed under the [GNU GPLv3](LICENSE.md).
 
 - Process delta:
 
+The methods used in original and re-production work are similar. Due to bugs in the code I had to make several modifications in the implementation and execution of the proccess. The changes and issues are listed below:
+
+The Original Dataset can't be used due to it's size ~1.2TB, I had to search in docs[6] and I found smaller dataset named 'popular-4k' which was sized around ~30GB compressed.
+
+The Original SQL import script(data/popular-4k/load.sql) was using zcat which isn't very popular tool so I changed it with gzip. The script was taking too much time for execution(~4-5 Hours) because it was creating a gin index(database indexes which can make search faster) which in my opinion was not very useful as I was already using smaller dataset so I created additional loading script which does not create gin indexes. I searched for several ways to speed up the execution and I tried changing several databse configrations and eventually I found one that fits best.
+
+Then I have to use cve_manager which can download NIST NVD and parse data from it and create `cve_related_problems.csv` (CVE to CWE list) which had issues while writing down output, so I modified the code and also sent a PR fixing it. 
+
+Now comes using original code(process/code/original) which had several bugs and code can not be executed without fixing them - few of them were listed in file update_cve.ipynb as "# Bug Fixed". It was interesting that there were bugs while creating statistics 1-5.
+
+
 - Data delta:
+
+1. Input data - I used smaller dataset as Original Dataset can't be used due to it's size ~1.2TB.
+2. Temp Data - Downloading & Parsing NIST NVD created similar result.
+3. Output Data -
+As I used smaller dataset it is very obvious that results will be not same, I have answered RQ1 & RQ2 in process/code/update_cve.ipynb
+For Research Question 1 - I found nearly similar result and CWE-200 & CWE-185 were common among both Python and Javascript.
+For Research Question 2 - Results were opposite, it takes average 89 days for python and 21 days for JavaScript comminities to fix a vulnerablity.
+
 
 ## References
 
