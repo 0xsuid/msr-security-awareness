@@ -65,7 +65,7 @@ Note: Select options one by one (in scripts) in following order:
     3. Create Tables (cve_revs,cve_revs_js,cve_revs_py)  
     4. Download NVD & Get CVE related issues
 
-After completing above steps you should continue with Generate Statistics/Result.
+After completing above steps you should continue with Generate Statistics/Result section given below.
 
 - **For Windows**:
 
@@ -89,23 +89,23 @@ After completing above steps you should continue with Generate Statistics/Result
 
 3. Create Database & Load Dataset:
 
-    **NOTE**: Execution of below script may take **a lot of time**, if you don't have extra time then you might want to continue without creating indexes - which may speedup execution of SQL queries.
+    **NOTE**: Execution of below script may take **a lot of time**, if you don't have extra time then you might want to continue without creating indexes (which may take little bit more execution time for SQL queries).
 
     1. Using Indexed Database - Execution time is **~3-4 HOURS**.
 
     ```
-    createdb swhgd-popular-4k
+    createdb -U postgres swhgd-popular-4k
     cd data/popular-4k/
-    psql swhgd-popular-4k < load.sql
+    psql -U postgres swhgd-popular-4k < load.sql
     ```
 
     2. Using NON INDEXD DB - Execution time is **~30-40 MINS**.
 
     ```
-    createdb swhgd-popular-4k
+    createdb -U postgres swhgd-popular-4k
     cp process/sql/load_no_index.sql data/popular-4k/
     cd data/popular-4k/
-    psql swhgd-popular-4k < load_no_index.sql
+    psql -U postgres swhgd-popular-4k < load_no_index.sql
     ```
 
     If you just want to explore then I would like to recommend that you should go with 2nd option - non indexed db.
@@ -114,17 +114,17 @@ After completing above steps you should continue with Generate Statistics/Result
 
     1. Create cve_revs table
         ```
-        psql swhgd-popular-4k < process/sql/create_table_cve_revs.sql postgres
+        psql -U postgres swhgd-popular-4k < process/sql/create_table_cve_revs.sql
         ```
 
     2. Create cve_revs_js table
         ```
-        psql swhgd-popular-4k < process/sql/create_table_cve_revs_js.sql postgres
+        psql -U postgres swhgd-popular-4k < process/sql/create_table_cve_revs_js.sql
         ```
 
     3. Create cve_revs_py table
         ```
-        psql swhgd-popular-4k < process/sql/create_table_cve_revs_py.sql postgres
+        psql -U postgres swhgd-popular-4k < process/sql/create_table_cve_revs_py.sql
         ```
 5. Download NVD & Get CVE related issues
 
@@ -134,9 +134,11 @@ After completing above steps you should continue with Generate Statistics/Result
     ```
     python code/cve_manager.py -d -p -csv -i data/nvd -o data/cve_parsed
     ```
-6. After completing above steps you should continue with Generate Statistics/Result.
+6. After completing above steps you should continue with Generate Statistics/Result section given below.
 ## Generate Statistics/Result:
 
-- Edit Jupyter notebook [update_cve](process/code/update_cve.ipynb)  
-    - Add database and user details  
-- Run [update_cve](process/code/update_cve.ipynb)
+**INFO**: Original code is available under process/code/original Folder.
+
+1. Edit Jupyter notebook [process/code/update_cve](process/code/update_cve.ipynb)  
+2. Add database and user details  
+3. Run [update_cve](process/code/update_cve.ipynb)

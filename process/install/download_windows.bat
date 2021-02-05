@@ -42,8 +42,8 @@ echo =================================
 echo Loading Dataset into Database - est. time(~30-45 mins):
 xcopy /y %~dp0..\..\process\sql\load_no_index.sql %~dp0..\..\data\popular-4k
 cd %~dp0..\..\data\popular-4k
-E:\PostgreSQL\bin\createdb -U postgres swhgd-popular-4k
-E:\PostgreSQL\bin\psql -U postgres swhgd-popular-4k < load_no_index.sql
+createdb -U postgres swhgd-popular-4k
+psql -U postgres swhgd-popular-4k < load_no_index.sql
 echo Finished Loading Dataset into Database
 goto Menu
 
@@ -53,7 +53,7 @@ echo =================================
 echo Creating Table cve_revs - est. time(~3-4 mins)
 psql -U postgres swhgd-popular-4k < %~dp0..\..\process\sql\create_table_cve_revs.sql
 echo Successfully Created Table cve_revs
-echo Creating Table cve_revs_js - est. time(~20-30 mins)
+echo Creating Table cve_revs_js - est. time(~5-20 mins)
 psql -U postgres swhgd-popular-4k < %~dp0..\..\process\sql\create_table_cve_revs_js.sql
 echo Successfully Created Table cve_revs_js
 echo Creating Table cve_revs_py - est. time(~5-10 mins)
