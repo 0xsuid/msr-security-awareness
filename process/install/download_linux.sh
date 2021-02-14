@@ -36,18 +36,17 @@ esac
 
 function download_wget {
     echo "Downloading Dataset"
-    mkdir -p $(dirname "$0")/../../data/popular-4k && cd $(dirname "$0")/../../data/popular-4k
+    mkdir -p $SCRIPT_PATH/../../data/popular-4k && cd $SCRIPT_PATH/../../data/popular-4k
     wget -c -q --show-progress -A gz,sql -nd -r -np -nH https://annex.softwareheritage.org/public/dataset/graph/latest/popular-4k/sql/
     sed -i 's/zcat/gzip -cd/g' load.sql
-    cd $(dirname "$0")/../code/
-    wget -P ../code/ https://raw.githubusercontent.com/0xsuid/cve_manager/master/cve_manager.py
+    wget -P $SCRIPT_PATH/../code/ https://raw.githubusercontent.com/0xsuid/cve_manager/master/cve_manager.py
     printf "Download Complete\n"
     menu
 }
 
 function download_curl {
     echo "Downloading Dataset"
-    mkdir -p $(dirname "$0")/../../data/popular-4k && cd $(dirname "$0")/../../data/popular-4k
+    mkdir -p $SCRIPT_PATH/../../data/popular-4k && cd $SCRIPT_PATH/../../data/popular-4k
     for file in $(curl --progress-bar https://annex.softwareheritage.org/public/dataset/graph/latest/popular-4k/sql/ |
                     grep -Po '(?<=<a href=")[^".]*(\.csv\.gz|\.sql)'); 
     do
@@ -55,7 +54,7 @@ function download_curl {
         curl --progress-bar -O https://annex.softwareheritage.org/public/dataset/graph/latest/popular-4k/sql/$file
     done
     sed -i 's/zcat/gzip -cd/g' load.sql
-    cd $(dirname "$0")/../code/
+    cd $SCRIPT_PATH/../code/
     curl -O https://raw.githubusercontent.com/0xsuid/cve_manager/master/cve_manager.py
     printf "Download Complete\n"
     menu
@@ -80,7 +79,7 @@ function load_dataset {
 
 function create_db_index {
     printf "Loading Dataset into Database - est. time(~4-5 Hours):\n"
-    cd $(dirname "$0")/../../data/popular-4k/
+    cd $SCRIPT_PATH/../../data/popular-4k/
     createdb -U postgres swhgd-popular-4k
     psql -U postgres swhgd-popular-4k < load.sql
     printf "Finished Loading Dataset into Database\n"
@@ -89,8 +88,8 @@ function create_db_index {
 
 function create_db_no_index {
     printf "Loading Dataset into Database - est. time(~30-45 mins):\n"
-    cp $(dirname "$0")/../../process/sql/load_no_index.sql $(dirname "$0")/../../data/popular-4k/
-    cd $(dirname "$0")/../../data/popular-4k/
+    cp $SCRIPT_PATH/../../process/sql/load_no_index.sql $SCRIPT_PATH/../../data/popular-4k/
+    cd $SCRIPT_PATH/../../data/popular-4k/
     createdb -U postgres swhgd-popular-4k
     psql -U postgres swhgd-popular-4k < load_no_index.sql
     printf "Finished Loading Dataset into Database\n"
@@ -99,19 +98,20 @@ function create_db_no_index {
 
 function create_tables {
     printf "Creating Table cve_revs - est. time(~3-4 mins)\n"
-    psql -U postgres swhgd-popular-4k < $(dirname "$0")/../../process/sql/create_table_cve_revs.sql
+    psql -U postgres swhgd-popular-4k < $SCRIPT_PATH/../../process/sql/create_table_cve_revs.sql
     printf "Successfully Created Table cve_revs\n"
     printf "Creating Table cve_revs_js - est. time(~20-30 mins)\n"
-    psql -U postgres swhgd-popular-4k < $(dirname "$0")/../../process/sql/create_table_cve_revs_js.sql
+    psql -U postgres swhgd-popular-4k < $SCRIPT_PATH/../../process/sql/create_table_cve_revs_js.sql
     printf "Successfully Created Table cve_revs_js"
     printf "Creating Table cve_revs_py - est. time(~5-10 mins)\n"
-    psql -U postgres swhgd-popular-4k < $(dirname "$0")/../../process/sql/create_table_cve_revs_py.sql
+    psql -U postgres swhgd-popular-4k < $SCRIPT_PATH/../../process/sql/create_table_cve_revs_py.sql
     printf "Successfully Created Table cve_revs_py\n"
     menu
 }
 
 function get_cve_data {
-    python $(dirname "$0")/../code/cve_manager.py -d -p -csv -i $(dirname "$0")/../../data/nvd -o $(dirname "$0")/../../data/cve_parsed
+    python $SCRIPT_PATH/../code/cve_manager.py -d -p -csv -i $SCRIPT_PATH/../../data/nvd -o $SCRIPT_PATH/../../data/cve_parsed
 }
 
+SCRIPT_PATH="$(cd -P "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 menu
