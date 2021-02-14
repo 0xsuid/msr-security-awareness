@@ -60,8 +60,8 @@ Download "popular-4k" Dataset, Load Dataset into Database & Create Tables(cve_re
 Database optimization is Recommended before executing scripts.
 
 Note: Select options one by one (in scripts) in following order:  
-    1. Download Dataset  
-    2. Load Dataset into Database  
+    1. Download Dataset(Size ~22.5GB **compressed**)  
+    2. Load Dataset into Database 
     3. Create Tables (cve_revs,cve_revs_js,cve_revs_py)  
     4. Download NVD & Get CVE related issues
 
@@ -85,7 +85,7 @@ After completing above steps you should continue with Generate Statistics/Result
 
 1. Install PostgreSQL 13.
 
-2. Download Dataset - [Link](https://annex.softwareheritage.org/public/dataset/graph/latest/popular-4k/sql/)
+2. Download Dataset - [Link](https://annex.softwareheritage.org/public/dataset/graph/latest/popular-4k/sql/) (Size ~22.5GB **compressed**) 
 
 3. Create Database & Load Dataset:
 
