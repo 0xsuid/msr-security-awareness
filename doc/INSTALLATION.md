@@ -140,5 +140,6 @@ After completing above steps you should continue with Generate Statistics/Result
 **INFO**: Original code is available under process/code/original Folder.
 
 1. Edit Jupyter notebook [process/code/update_cve](process/code/update_cve.ipynb)  
-2. Add database and user details  
+2. Add password for postgres user(database default user):
+    - example - Replace password="" with password="yourPASS@here"
 3. Run [update_cve](process/code/update_cve.ipynb)
