@@ -1,0 +1,1226 @@
+some sql injection prevention + tests,6394c5b660280cf32b6660b6f321d9f045597927,2011-03-27 10:18:31+02
+"Cleaned up scopes/smartwhere, added another spec to make sure SQL is escaped, and fixed potential SQL injection problem with sqlite
+",3654655138d6ab6c644649dbb3a578740a5830cd,2013-07-16 09:19:36+02
+"(#1170) Escape startkey/endkey in WebSQL allDocs()
+
+Properly escape the startkey/endkey to avoid SQL injection
+vulnerabilities or problems with invalid characters.
+",ac097a2fef35bb08dd03479e11170b90e1ba6679,2013-12-21 09:51:45+01
+"(#1170) Escape startkey/endkey in WebSQL allDocs()
+
+Properly escape the startkey/endkey to avoid SQL injection
+vulnerabilities or problems with invalid characters.
+",59b1f9e003b9858796bbbe7f5f476b3cba527c26,2013-12-21 20:41:31+01
+"[SECURITY CVE-2014-0014] Ensure {{group}} helper escapes properly.
+
+This vulnerability has been assigned the CVE identifier CVE-2014-0014.
+
+In general, Ember.js escapes or strips any user-supplied content before
+inserting it in strings that will be sent to innerHTML.  However, we
+have identified a vulnerability that could lead to unescaped content being
+inserted into the innerHTML string without being sanitized.
+
+When using the `{{group}}` helper, user supplied content in the template
+was not being sanitized. Though the vulnerability exists in Ember.js proper,
+it is only exposed via the use of an experimental plugin.
+
+In applications that use the `{{group}}` helper, a specially-crafted
+payload could execute arbitrary JavaScript in the context of the current
+domain ('"XSS'").
+
+This vulnerability was reported to us by Edward Faulkner of CleriCare.
+Many thanks for working with us on the patches and advisory.
+",007a1c5b62bf498fc24015c7108a2c355a797352,2014-01-14 03:13:54+01
+"[SECURITY CVE-2014-0013] Ensure primitive value contexts are escaped.
+
+This vulnerability has been assigned the CVE identifier CVE-2014-0013.
+
+In general, Ember.js escapes or strips any user-supplied content before
+inserting it in strings that will be sent to innerHTML.  However, we have
+identified a vulnerability that could lead to unescaped content being inserted
+into the innerHTML string without being sanitized.
+
+When a primitive value is used as the Handlebars context, that value is not
+properly escaped.  An example of this would be using the `{{each}}` helper to
+iterate over an array of user-supplied strings and using `{{this}}` inside the
+block to display each string.
+
+In applications that contain templates whose context is a primitive value and
+use the `{{this}}` keyword to display that value, a specially-crafted payload
+could execute arbitrary JavaScript in the context of the current domain
+('"XSS'").
+
+This vulnerability was discovered by Robert Jackson of DockYard. Many
+thanks for working with us on the patches and advisory.
+",3c556e8a3f893092cb64528ba589e4f71cc29687,2014-01-14 03:20:00+01
+"[SECURITY CVE-2014-0014] Ensure {{group}} helper escapes properly.
+
+This vulnerability has been assigned the CVE identifier CVE-2014-0014.
+
+In general, Ember.js escapes or strips any user-supplied content before
+inserting it in strings that will be sent to innerHTML.  However, we
+have identified a vulnerability that could lead to unescaped content being
+inserted into the innerHTML string without being sanitized.
+
+When using the `{{group}}` helper, user supplied content in the template
+was not being sanitized. Though the vulnerability exists in Ember.js proper,
+it is only exposed via the use of an experimental plugin.
+
+In applications that use the `{{group}}` helper, a specially-crafted
+payload could execute arbitrary JavaScript in the context of the current
+domain ('"XSS'").
+
+This vulnerability was reported to us by Edward Faulkner of CleriCare.
+Many thanks for working with us on the patches and advisory.
+",c80748313f93757b28f2bd3bd3d594e1e8e03d80,2014-01-14 03:40:00+01
+"[SECURITY CVE-2014-0013] Ensure primitive value contexts are escaped.
+
+This vulnerability has been assigned the CVE identifier CVE-2014-0013.
+
+In general, Ember.js escapes or strips any user-supplied content before
+inserting it in strings that will be sent to innerHTML.  However, we have
+identified a vulnerability that could lead to unescaped content being inserted
+into the innerHTML string without being sanitized.
+
+When a primitive value is used as the Handlebars context, that value is not
+properly escaped.  An example of this would be using the `{{each}}` helper to
+iterate over an array of user-supplied strings and using `{{this}}` inside the
+block to display each string.
+
+In applications that contain templates whose context is a primitive value and
+use the `{{this}}` keyword to display that value, a specially-crafted payload
+could execute arbitrary JavaScript in the context of the current domain
+('"XSS'").
+
+This vulnerability was discovered by Robert Jackson of DockYard. Many
+thanks for working with us on the patches and advisory.
+",84b4da47170adec265b555637c436c55bc3934f9,2014-01-14 03:40:13+01
+"[SECURITY CVE-2014-0013] Ensure primitive value contexts are escaped.
+
+This vulnerability has been assigned the CVE identifier CVE-2014-0013.
+
+In general, Ember.js escapes or strips any user-supplied content before
+inserting it in strings that will be sent to innerHTML.  However, we have
+identified a vulnerability that could lead to unescaped content being inserted
+into the innerHTML string without being sanitized.
+
+When a primitive value is used as the Handlebars context, that value is not
+properly escaped.  An example of this would be using the `{{each}}` helper to
+iterate over an array of user-supplied strings and using `{{this}}` inside the
+block to display each string.
+
+In applications that contain templates whose context is a primitive value and
+use the `{{this}}` keyword to display that value, a specially-crafted payload
+could execute arbitrary JavaScript in the context of the current domain
+('"XSS'").
+
+This vulnerability was discovered by Robert Jackson of DockYard. Many
+thanks for working with us on the patches and advisory.
+",9205bcce8187f5ccc6b92b1fa20d38d8f3bc0028,2014-01-14 16:58:03+01
+"[SECURITY CVE-2014-0014] Ensure {{group}} helper escapes properly.
+
+This vulnerability has been assigned the CVE identifier CVE-2014-0014.
+
+In general, Ember.js escapes or strips any user-supplied content before
+inserting it in strings that will be sent to innerHTML.  However, we
+have identified a vulnerability that could lead to unescaped content being
+inserted into the innerHTML string without being sanitized.
+
+When using the `{{group}}` helper, user supplied content in the template
+was not being sanitized. Though the vulnerability exists in Ember.js proper,
+it is only exposed via the use of an experimental plugin.
+
+In applications that use the `{{group}}` helper, a specially-crafted
+payload could execute arbitrary JavaScript in the context of the current
+domain ('"XSS'").
+
+This vulnerability was reported to us by Edward Faulkner of CleriCare.
+Many thanks for working with us on the patches and advisory.
+",12fa46ba1c6efb9ddac7bfdef7f4f6909781c801,2014-01-14 16:58:03+01
+"[SECURITY CVE-2014-0013] Ensure primitive value contexts are escaped.
+
+This vulnerability has been assigned the CVE identifier CVE-2014-0013.
+
+In general, Ember.js escapes or strips any user-supplied content before
+inserting it in strings that will be sent to innerHTML.  However, we have
+identified a vulnerability that could lead to unescaped content being inserted
+into the innerHTML string without being sanitized.
+
+When a primitive value is used as the Handlebars context, that value is not
+properly escaped.  An example of this would be using the `{{each}}` helper to
+iterate over an array of user-supplied strings and using `{{this}}` inside the
+block to display each string.
+
+In applications that contain templates whose context is a primitive value and
+use the `{{this}}` keyword to display that value, a specially-crafted payload
+could execute arbitrary JavaScript in the context of the current domain
+('"XSS'").
+
+This vulnerability was discovered by Robert Jackson of DockYard. Many
+thanks for working with us on the patches and advisory.
+",198d571e6e5202ebd8531d92e5316cece3392a61,2014-01-14 16:58:59+01
+"[SECURITY CVE-2014-0014] Ensure {{group}} helper escapes properly.
+
+This vulnerability has been assigned the CVE identifier CVE-2014-0014.
+
+In general, Ember.js escapes or strips any user-supplied content before
+inserting it in strings that will be sent to innerHTML.  However, we
+have identified a vulnerability that could lead to unescaped content being
+inserted into the innerHTML string without being sanitized.
+
+When using the `{{group}}` helper, user supplied content in the template
+was not being sanitized. Though the vulnerability exists in Ember.js proper,
+it is only exposed via the use of an experimental plugin.
+
+In applications that use the `{{group}}` helper, a specially-crafted
+payload could execute arbitrary JavaScript in the context of the current
+domain ('"XSS'").
+
+This vulnerability was reported to us by Edward Faulkner of CleriCare.
+Many thanks for working with us on the patches and advisory.
+",d9977d62b26534555c0708acde0e7ae029e6d8ea,2014-01-14 16:58:59+01
+"[SECURITY CVE-2014-0046] Ensure link-to non-block escapes title.
+",83baab02bdff34542c468323816c344721d40c33,2014-02-07 19:56:23+01
+"[SECURITY CVE-2014-0046] Ensure link-to non-block escapes title.
+",94b28b8773acf894c4d7d7fccf4411a706292436,2014-02-07 20:03:14+01
+"[SECURITY CVE-2014-0046] Ensure link-to non-block escapes title.
+",45ee8df2a0efc0afe233d6b9b17045782a2e6b2d,2014-02-07 20:14:27+01
+"[SECURITY CVE-2014-0046] Ensure link-to non-block escapes title.
+",12749841c41fd46d773a5d91db26210e2bf97867,2014-02-07 20:16:21+01
+"(#1743) - escape sql in websql''s doCompaction
+
+This should be the final SQL injection fix. I don''t
+see quote() being used anywhere else, except for
+static db names.
+",5f2ef9ca46991057f3ea541361d08b68ca72f358,2014-03-26 22:49:30+01
+"(#1743) - escape sql in websql''s doCompaction
+
+This should be the final SQL injection fix. I don''t
+see quote() being used anywhere else, except for
+static db names.
+",7c69b64d1d65b4078fa97d74704e8310d905c08c,2014-03-27 18:43:39+01
+"readme: multiple statement clarification
+
+Allowing multiple statement dosen''t in itself expose you to sql injection attacks. It only does so if you already allow unsanitized input in your queries, which you should never do.
+",e5ebc304159af329beff57b23c72bf68beb25dd4,2015-03-20 16:08:04+01
+"[SECURITY CVE-2015-1866] Escape Ember.Select option label contents.
+",8bdbc0599567e9c600d9744463a0dafd4929e6fe,2015-04-14 19:32:01+02
+"[SECURITY CVE-2015-1866] Escape Ember.Select option label contents.
+",66418d27be75c1567d8621123e7005e5ab57d231,2015-04-14 19:38:01+02
+"[SECURITY CVE-2015-1866] Escape Ember.Select option label contents.
+
+(cherry picked from commit 29703251a3d36ff972753985aa23f4e6bf2cf24e)
+",3368489926d95cc0c9960e31c7ca904b9b092300,2015-04-14 19:42:19+02
+"[SECURITY CVE-2015-1866] Escape Ember.Select option label contents.
+
+(cherry picked from commit 66418d27be75c1567d8621123e7005e5ab57d231)
+",95eab36762fac48949ec502bd38ed61e1570711b,2015-04-14 19:51:57+02
+"[SECURITY CVE-2015-1866] Escape Ember.Select option label contents.
+
+(cherry picked from commit 29703251a3d36ff972753985aa23f4e6bf2cf24e)
+(cherry picked from commit 3368489926d95cc0c9960e31c7ca904b9b092300)
+",beda9d0efe278a4d69824d5b5717a28126259fa5,2015-04-14 19:53:55+02
+"[SECURITY CVE-2015-1866] Escape Ember.Select option label contents.
+
+(cherry picked from commit 29703251a3d36ff972753985aa23f4e6bf2cf24e)
+(cherry picked from commit 3368489926d95cc0c9960e31c7ca904b9b092300)
+",5a4667b4afc4bea61b617a839fec61ccf2071a40,2015-04-14 19:54:07+02
+"Added SQL injection for bypassing logins.
+",f0fecb173f9117c7b5cffaf04f7d797fb4421303,2015-08-19 04:15:37+02
+"Merge pull request #54 from pgrochowski/master
+
+Added SQL injection for bypassing logins.",30ea4630514b766b2a1070e6a20df2aeb583cbea,2015-08-19 05:36:40+02
+"Added CVE-2015-8213 to the security archive.
+",3d805aeaf8ca1af039d6467fd848d364ec085f66,2015-11-24 19:10:10+01
+"[1.9.x] Added CVE-2015-8213 to the security archive.
+
+Backport of 3d805aeaf8ca1af039d6467fd848d364ec085f66 from master
+",2e2e099a73e728a2bfddc918d9acf473b3a86eef,2015-11-24 20:05:39+01
+"Added CVE-2016-2048 to the security archive.
+",ecd502cfdb57706dd0e84d9928934bcae6b1ef25,2016-02-01 18:42:37+01
+"[1.9.x] Added CVE-2016-2048 to the security archive.
+
+Backport of ecd502cfdb57706dd0e84d9928934bcae6b1ef25 from master
+",34fae0a4f7b0702cf9e4c72a8a3b82040a426595,2016-02-01 18:43:02+01
+"Fixed CVE-2016-2512 -- Prevented spoofing is_safe_url() with basic auth.
+
+This is a security fix.
+",c5544d289233f501917e25970c03ed444abbd4f0,2016-03-01 17:25:28+01
+"Fixed CVE-2016-2513 -- Fixed user enumeration timing attack during login.
+
+This is a security fix.
+",67b46ba7016da2d259c1ecc7d666d11f5e1cfaab,2016-03-01 17:25:28+01
+"[1.9.x] Fixed CVE-2016-2513 -- Fixed user enumeration timing attack during login.
+
+This is a security fix.
+",af7d09b0c5c6ab68e629fd9baf736f9dd203b18e,2016-03-01 17:38:49+01
+"[1.9.x] Fixed CVE-2016-2512 -- Prevented spoofing is_safe_url() with basic auth.
+
+This is a security fix.
+",fc6d147a63f89795dbcdecb0559256470fff4380,2016-03-01 17:38:49+01
+"Added CVE-2016-2512/2513 to security release archive.
+",24fc9352183c449a8b11d1c7b442e70aa61a8800,2016-03-01 18:32:42+01
+"[1.9.x] Added CVE-2016-2512/2513 to security release archive.
+
+Backport of 24fc9352183c449a8b11d1c7b442e70aa61a8800 from master
+",a53ee2bbf4e6676ba67160a04d02be63c2bff767,2016-03-01 18:36:17+01
+"Update libxml2 dependency CVE-2016-4448 #515
+
+Also updates:
+* libpng as previous version is now unavailable (?)
+* libjpeg as previous version was pre-release
+",762cda75a91278133fd9397e19080e13a7d6cc07,2016-07-18 13:07:28+02
+"Added CVE-2016-6186 to the security release archive.
+",bc53af13cbf09b0cbac945426c2d51d0ca52fff3,2016-07-18 21:19:35+02
+"[1.10.x] Added CVE-2016-6186 to the security release archive.
+
+Backport of bc53af13cbf09b0cbac945426c2d51d0ca52fff3 from master
+",658f545b0c979e0355ceb6631edcc06446c37530,2016-07-18 21:20:30+02
+"[1.9.x] Added CVE-2016-6186 to the security release archive.
+
+Backport of bc53af13cbf09b0cbac945426c2d51d0ca52fff3 from master
+",57c4db8c6903e3e95f53f8f0ca448231b385071f,2016-07-18 21:20:38+02
+"mysql case for GEOGRAPHY/GEOMETRY sql injection
+",18ac91040d9c57351d26ba998f460e214255b704,2016-07-19 11:11:25+02
+"mysql case for GEOGRAPHY/GEOMETRY sql injection (#6306)
+
+",562d52585902090f4e53eb21c61314098c29d795,2016-07-19 13:50:26+02
+"mysql case for GEOGRAPHY/GEOMETRY sql injection (#6306)
+
+",ea6ee1a2251f8a5655d749eb6b97680538cad4c2,2016-07-28 11:11:32+02
+"[1.9.x] Fixed CVE-2016-7401 -- Fixed CSRF protection bypass on a site with Google Analytics.
+
+This is a security fix.
+
+Backport of '"refs #26158 -- rewrote http.parse_cookie() to better match
+browsers.'" 93a135d111c2569d88d65a3f4ad9e6d9ad291452 from master
+",d1bc980db1c0fffd6d60677e62f70beadb9fe64a,2016-09-26 18:54:36+02
+"Added CVE-2016-7401 to the security release archive.
+",6fe846a8f08dc959003f298b5407e321c6fe3735,2016-09-27 00:01:19+02
+"[1.10.x] Added CVE-2016-7401 to the security release archive.
+
+Backport of 6fe846a8f08dc959003f298b5407e321c6fe3735 from master
+",a1c2b2095fc126a37c461f6533c068f50e78939a,2016-09-27 00:22:14+02
+"[1.9.x] Added CVE-2016-7401 to the security release archive.
+
+Backport of 6fe846a8f08dc959003f298b5407e321c6fe3735 from master
+",48b1e9fb1746569b13f84158f98c47a557a92ec4,2016-09-27 00:22:19+02
+"[1.9.x] Fixed CVE-2016-9013 -- Generated a random database user password when running tests on Oracle.
+
+This is a security fix.
+",4844d86c7728c1a5a3bbce4ad336a8d32304072b,2016-10-25 20:31:42+02
+"[1.9.x] Fixed CVE-2016-9014 -- Validated Host header when DEBUG=True.
+
+This is a security fix.
+",45acd6d836895a4c36575f48b3fb36a3dae98d19,2016-10-25 21:18:29+02
+"Fixed CVE-2016-9013 -- Generated a random database user password when running tests on Oracle.
+
+This is a security fix.
+",da7910d4834726eca596af0a830762fa5fb2dfd9,2016-11-01 14:30:57+01
+"Fixed CVE-2016-9014 -- Validated Host header when DEBUG=True.
+
+This is a security fix.
+",7fe2d8d940fdddd1a02c4754008a27060c4a03e9,2016-11-01 14:30:57+01
+"[1.10.x] Fixed CVE-2016-9014 -- Validated Host header when DEBUG=True.
+
+This is a security fix.
+",884e113838e5a72b4b0ec9e5e87aa480f6aa4472,2016-11-01 14:36:44+01
+"[1.10.x] Fixed CVE-2016-9013 -- Generated a random database user password when running tests on Oracle.
+
+This is a security fix.
+",34e10720d81b8d407aa14d763b6a7fe8f13b4f2e,2016-11-01 14:36:44+01
+"Added CVE-2016-9013,14 to the security release archive.
+",b8ae2c16cfc4bf88c1720eafd8e35438181a7413,2016-11-01 15:48:11+01
+"[1.10.x] Added CVE-2016-9013,14 to the security release archive.
+
+Backport of b8ae2c16cfc4bf88c1720eafd8e35438181a7413 from master
+",b04594135f58ee1bd6b7e42fcdc6036761974feb,2016-11-01 15:48:41+01
+"[1.9.x] Added CVE-2016-9013,14 to the security release archive.
+
+Backport of b8ae2c16cfc4bf88c1720eafd8e35438181a7413 from master
+",734ef022a17180288a2ea65e2319676692bc9926,2016-11-01 15:48:49+01
+"Added EmailValidatorTest to prove CVE-2016-10074 does not affect EmailValidator
+",6af2a433909a25be951a362f8e56ce58dcbbe180,2016-12-28 23:21:23+01
+"added more tests for SwiftMailer vulnerability CVE-2016-10074
+
+https://legalhackers.com/advisories/SwiftMailer-Exploit-Remote-Code-Exec-CVE-2016-10074-Vuln.html
+",96ee5c373e529eb3313bf8174ab095ab12588f21,2016-12-28 23:50:10+01
+"Refactored support for ORDER BY clause so SQL injection is not possible.
+",5ef84930f4dd8dea9c1b9d3ee3f99ca02a0963cf,2017-01-28 00:00:37+01
+"6935 remove order string syntax (#7160)
+
+* Refactored support for ORDER BY clause so SQL injection is not possible.
+
+* Adds sublime text files to gitignore.
+Modified changelog to accurately represent changes to the order property.
+Fixed lint issues.
+
+* Added rejection with error where Order must be type of Array or instance of sequelize literal.
+
+* Removed support for options.order accepting strings.
+@TODO Look into plain objects with property raw
+@TODO Update documentation and tests
+
+* Removed all direct lodash and replaced them with Utils.
+ie. `_.isPlainObject` is now `Utils._.isPlainObject`
+find: `(?s)(?<!Utils\\.)_\\.`
+replace : `Utils._.`
+
+* Updates documentation for findAll order.
+
+* Added removeTicks to addTicks in quoteIdentifier for each dialect.
+
+* Added documentation for order by only an array.
+
+* Added breaking change to changelog and renamed error to be more general.
+
+@TODO: TESTS!
+
+* Fixes bad code when checking if the order is valid.
+
+* Updated unit tests.
+
+* Should incorporate all integration tests.
+
+* Update changelog.md capitalize Sequelize
+
+* Changes everything in query generator to use lodash outside of utils.
+
+* Instead of checking if the order object is an instance of a Utils member we just see if `_.isSequelizeMethod` is truthy.
+
+* Removing escapeId because it is no longer used.
+
+* Instead of removing ticks, we should escape them.
+
+* Instead of removing ticks, we should escape them. (reverted from commit e4dade0a18be85dfaf8f91f1210bc0b5bedcb31a)
+",c12b36b8d3e06c2eba1aa3362467f3fa8175a597,2017-02-07 10:09:33+01
+"6935 remove order string syntax (#7220)
+
+* Refactored support for ORDER BY clause so SQL injection is not possible.
+
+* Adds sublime text files to gitignore.
+Modified changelog to accurately represent changes to the order property.
+Fixed lint issues.
+
+* Added rejection with error where Order must be type of Array or instance of sequelize literal.
+
+* Removed support for options.order accepting strings.
+@TODO Look into plain objects with property raw
+@TODO Update documentation and tests
+
+* Removed all direct lodash and replaced them with Utils.
+ie. `_.isPlainObject` is now `Utils._.isPlainObject`
+find: `(?s)(?<!Utils\\.)_\\.`
+replace : `Utils._.`
+
+* Updates documentation for findAll order.
+
+* Added removeTicks to addTicks in quoteIdentifier for each dialect.
+
+* Added documentation for order by only an array.
+
+* Added breaking change to changelog and renamed error to be more general.
+
+@TODO: TESTS!
+
+* Fixes bad code when checking if the order is valid.
+
+* Updated unit tests.
+
+* Should incorporate all integration tests.
+
+* Update changelog.md capitalize Sequelize
+
+* Changes everything in query generator to use lodash outside of utils.
+
+* Instead of checking if the order object is an instance of a Utils member we just see if `_.isSequelizeMethod` is truthy.
+
+* Removing escapeId because it is no longer used.
+
+* Instead of removing ticks, we should escape them.
+
+* Instead of removing ticks, we should escape them. (reverted from commit e4dade0a18be85dfaf8f91f1210bc0b5bedcb31a)
+
+* Removes support for `._isSequelizeMethod` because it can be spoofed.  Instead, use instanceof.
+",e22ce18db2bd52a7e60ee52865bfa5a994e8ab7a,2017-02-07 17:37:03+01
+"Temporarily ignore Nokogiri CVE-2016-4658
+
+See https://gitlab.com/gitlab-org/gitlab-ce/issues/29992 for progress on
+updating this gem. In the meantime, we can''t do anything about it
+quickly, so we''ll ignore the CVE in `bundle-audit`
+",1e43753b438b8b4bc70f300faab961cf920ce310,2017-03-24 15:59:52+01
+"Merge branch ''rs-ignore-nokogiri-advisory'' into ''master''
+
+Temporarily ignore Nokogiri CVE-2016-4658
+
+See merge request !10218",cef1d6d2cb0dd64e19ecf7f6621dcf1d595b8930,2017-03-24 18:36:05+01
+"[1.9.x] Fixed #27912, CVE-2017-7233 -- Fixed is_safe_url() with numeric URLs.
+
+This is a security fix.
+",254326cb3682389f55f886804d2c43f7b9f23e4f,2017-04-04 16:00:41+02
+"[1.9.x] Fixed CVE-2017-7234 -- Fixed open redirect vulnerability in views.static.serve().
+
+This is a security fix.
+",5f1ffb07afc1e59729ce2b283124116d6c0659e4,2017-04-04 16:00:41+02
+"[1.10.x] Fixed CVE-2017-7234 -- Fixed open redirect vulnerability in views.static.serve().
+
+This is a security fix.
+",2a9f6ef71b8e23fd267ee2be1be26dde8ab67037,2017-04-04 16:17:35+02
+"[1.10.x] Fixed #27912, CVE-2017-7233 -- Fixed is_safe_url() with numeric URLs.
+
+This is a security fix.
+",f824655bc2c50b19d2f202d7640785caabc82787,2017-04-04 16:17:35+02
+"Fixed #27912, CVE-2017-7233 -- Fixed is_safe_url() with numeric URLs.
+
+This is a security fix.
+",5ea48a70afac5e5684b504f09286e7defdd1a81a,2017-04-04 16:42:06+02
+"Fixed CVE-2017-7234 -- Fixed open redirect vulnerability in views.static.serve().
+
+This is a security fix.
+",a1f948b468b6621083a03b0d53432341b7a4d753,2017-04-04 16:42:06+02
+"[1.11.x] Fixed CVE-2017-7234 -- Fixed open redirect vulnerability in views.static.serve().
+
+This is a security fix.
+",001ff508081a893d0cf81df1214dbd234606c360,2017-04-04 16:46:50+02
+"[1.11.x] Fixed #27912, CVE-2017-7233 -- Fixed is_safe_url() with numeric URLs.
+
+This is a security fix.
+",97e77b7bc14eafda704a01881cb2a3dc164947bc,2017-04-04 16:46:50+02
+"Added CVE-2017-7233,4 to the security release archive.
+",b749c980a066a15b58b236656e57b66073a35a52,2017-04-05 03:51:50+02
+"[1.11.x] Added CVE-2017-7233,4 to the security release archive.
+
+Backport of b749c980a066a15b58b236656e57b66073a35a52 from master
+",2d656d1fa1b66e3c86d27edc985e839aa921bc8f,2017-04-05 03:52:09+02
+"[1.10.x] Added CVE-2017-7233,4 to the security release archive.
+
+Backport of b749c980a066a15b58b236656e57b66073a35a52 from master
+",fd7105e130e55f67f6b0ba232a8c40f9af51a906,2017-04-05 03:52:17+02
+"[1.9.x] Added CVE-2017-7233,4 to the security release archive.
+
+Backport of b749c980a066a15b58b236656e57b66073a35a52 from master
+",2c3c029edeaa75e01373f3ec4a02fcc9184a2a76,2017-04-05 03:52:31+02
+"Removed duplicate tests and moved location of SQL injection test and find order test.
+",c75e5ad16b86df635f13f06b975c2691ace6013f,2017-04-28 20:00:10+02
+"Fixed SQL injection
+",a114c988b4c17e37508f1d0f96b93fd8b96d2df9,2017-05-02 19:11:50+02
+"7564 Ordering with JSON attributes (#7565)
+
+* Two birds with one stone.  Adds support for ordering by JSON columns and removes vulnerability for injections on JSON attributes.
+
+* Updates the changelog for the addition of json attributes.
+
+* Fixes lint error with prefer arrow.
+
+* Removes specific error because it may change depending on dialect and engine version.
+
+* Removed duplicate tests and moved location of SQL injection test and find order test.
+
+* Optimizes item.split performance by only performing the split once.
+
+* Fixes test for sqlite dialect json.  JSON is handled differently in sqlite where the json value is extracted from a path.  If the path doesn''t exist sqlite returns null instead of throwing an error like postgres.
+",c385994028e703fd589f266d55504d305b52a8a1,2017-05-07 21:07:59+02
+"Ignore CVE-2017-5029 in Nokogiri
+",3268b84f89a85e3dd1c64611e6c989076e0dc768,2017-06-12 23:12:07+02
+"Merge branch ''winh-ignore-CVE-2017-5029'' into ''master''
+
+Ignore CVE-2017-5029 in Nokogiri
+
+Closes #33597
+
+See merge request !12109",de20057ccbd3b8c94d64ff5d8deb14cab232d08a,2017-06-12 23:52:56+02
+"Merge branch ''winh-ignore-CVE-2017-5029'' into ''master''
+
+Ignore CVE-2017-5029 in Nokogiri
+
+Closes #33597
+
+See merge request !12109",c86d9e1026250c7fa0d69d20319854d9f6101b16,2017-06-13 00:53:16+02
+"Ignore CVE-2017-5029 in Nokogiri
+",b83972f9633e865c1f7ddbfd2d03919ca7c40ae3,2017-06-13 08:34:28+02
+"Merge branch ''winh-ignore-CVE-2017-5029'' into ''master''
+
+Ignore CVE-2017-5029 in Nokogiri
+
+Closes #33597
+
+See merge request !12109",0d9311624754fbc3e0b8f4a28be576e48783bf81,2017-06-13 09:49:19+02
+"Merge branch ''winh-ignore-CVE-2017-5029'' into ''master''
+
+Ignore CVE-2017-5029 in Nokogiri
+
+Closes #33597
+
+See merge request !12109",b64a46caed20acee92d9157dc9d3d939e24cbf4a,2017-06-13 11:05:54+02
+"Merge branch ''winh-ignore-CVE-2017-5029'' into ''master''
+
+Ignore CVE-2017-5029 in Nokogiri
+
+Closes #33597
+
+See merge request !12109",a4270596d7c8ce3b47fe164755181df7b22ac5de,2017-06-13 11:40:22+02
+"Merge remote-tracking branch ''upstream/master'' into 33149-rename-more-builds
+
+* upstream/master: (460 commits)
+  Center dropdown for pipeline''s  mini graph
+  Documentation bugfix of invalid JSON payload example of Create a commit with multiple files and actions
+  Fix filename method of GitlabUploader to return always real filename
+  Ignore CVE-2017-5029 in Nokogiri
+  Refactor atom builder by using xml.atom layout
+  Let PhantomJS load local images
+  Add a changelog entry
+  Only add a description change note when no tasks are updated
+  Doc: Add the need to upgrade to Go 1.8.3 in the 9.1->9.2 documentation as the upgrade fails with Go 1.5 (installed with Gitlab 8.1)
+  Use gitaly 0.11.2
+  Add the ability to perform background migrations
+  Always render warnings icon in orange
+  Fix a few translation for zh_TW
+  Improve Job detail view to make it refreshed in real-time instead of reloading
+  Attempts to run RSpec tests twice (1 retry)
+  ignore name validation on importing
+  Only show hover state on links and buttons
+  Use vue files for navigation tabs and buttons
+  doc: add example of scheduler when
+  Add test for u2f helper and changelog entry
+  ...
+",edc46ce3e44147d5fe1b3071ba1e020846b60b13,2017-06-13 12:01:25+02
+"Merge remote-tracking branch ''ee/master'' into 2302-environment-specific-variables
+
+* ee/master:
+  Merge branch ''winh-ignore-CVE-2017-5029'' into ''master''
+  Treat licenses with no plan specified as EES
+  Add explicit licensing for Elasticsearch
+  removes redundant project pull mirroring code from a bad merge
+  Add an optional performance bar to view performance metrics
+  Use :request_store hooks on specs
+  Override `file_storage` on the `ObjectStoreUploader`
+  Update rename_system_namespace_spec to new validations.
+  Make the uploader use the updated folder
+  Bring in security changes from the 9.2.5 release
+  Fix tests on `security-9-2-ee`
+",ff6864b8a8944f75dff65fa469c93067389cad38,2017-06-13 12:19:32+02
+"Merge branch ''winh-ignore-CVE-2017-5029'' into ''master''
+
+Ignore CVE-2017-5029 in Nokogiri
+
+Closes #33597
+
+See merge request !12109",c61ede30e80ad83e3d26e50ec27b5daa8d8f2ed8,2017-06-14 02:56:08+02
+"Merge remote-tracking branch ''ee/master'' into 2302-environment-specific-variables
+
+* ee/master: (24 commits)
+  Changelog
+  Fix GeoDynaicBackoff strategy code and added specs
+  Enable RSpec/SingleLineHook cop
+  Correct RSpec/SingleLineHook cop offenses
+  Add a custom RSpec/SingleLineHook cop
+  Add docs for personal access tokens
+  Fix wrong link to codeclimate diff docs
+  Cleaned up helper methods in protected tags/branches specs
+  Handle nil GeoNode to prevent spec failures
+  Fix failing spec
+  Add related issues backend
+  Add more descriptive message about NotImplementedError and display it in health check
+  Restrict Geo tests to PostgreSQL
+  Suggest a way to resolve Geo tracking DB not having all the migrations
+  Move License initializer to the front
+  Memoized access levels in ProtectedBranch EE specs
+  Cleanup protected branch EE specs, removing unnecessary to_sym
+  Revert '"Fix specs during CE->EE'"
+  Fix specs during CE->EE
+  Merge branch ''winh-ignore-CVE-2017-5029'' into ''master''
+  ...
+",7afa087734496ccdcbea8f1ba9f38d7fb5370e56,2017-06-15 10:46:51+02
+"Re-enable SqlInjection and CommandInjection
+",17b9ec186ae7f247728cc5c499e61ccd7670b1de,2017-07-31 22:12:22+02
+"Re-enable SqlInjection and CommandInjection
+",9770c57fab0315865a33c8b6df269eded0d57b5c,2017-08-08 16:50:54+02
+"Ignore CVE-2017-5029 in Nokogiri
+",4d016171baf58e22ef723da38cea3a19dbc85523,2017-08-08 19:46:41+02
+"Upgrade mail and nokogiri gems due to security issues
+
+CVE-2015-9097
+CVE-2016-4658
+CVE-2017-5029
+",5ac22227258790c69e06bcc64cbbdf489ee51c00,2017-08-28 14:37:40+02
+"Fixed CVE-2017-12794 -- Fixed XSS possibility in traceback section of technical 500 debug page.
+
+This is a security fix.
+",46e2b9e059e617afe6fe56da9f132568a7e6b198,2017-09-05 16:58:38+02
+"[1.11.x] Fixed CVE-2017-12794 -- Fixed XSS possibility in traceback section of technical 500 debug page.
+
+This is a security fix.
+",e35a0c56086924f331e9422daa266e907a4784cc,2017-09-05 17:05:43+02
+"[1.10.x] Fixed CVE-2017-12794 -- Fixed XSS possibility in traceback section of technical 500 debug page.
+
+This is a security fix.
+",58e08e80e362db79eb0fd775dc81faad90dca47a,2017-09-05 17:19:56+02
+"Add warning about SQL Injection vulnerability with different SQL_MODE
+",83c5c3cda4464aee501af5111e356f6d194037fe,2017-09-21 22:03:42+02
+"Upgrade Nokogiri because of CVE-2017-9050
+",f45f7ad62a952f90430f67b36c5edc8525f346c6,2017-09-21 22:32:51+02
+"Merge branch ''winh-upgrade-nokogiri'' into ''master''
+
+Upgrade Nokogiri because of CVE-2017-9050
+
+See merge request gitlab-org/gitlab-ce!14427",92173ac55cd921a65ce137e238ed8bc4474aaccb,2017-09-21 23:44:31+02
+"Merge branch ''winh-upgrade-nokogiri'' into ''master''
+
+Upgrade Nokogiri because of CVE-2017-9050
+
+See merge request gitlab-org/gitlab-ce!14427",34797ad365a820505236f3814df1cf5d299f376c,2017-09-22 04:09:22+02
+"Merge branch ''master'' into 31050-registry-image-lists
+
+* master: (112 commits)
+  Replace the ''project/service.feature'' spinach test with an rspec analog
+  Removed two legacy config options
+  Fix rendering double note issue.
+  IssueNotes: Switch back to Write pane when note cancel or submit.
+  Upgrade Nokogiri because of CVE-2017-9050
+  Bump VERSION to 10.1.0-pre
+  Standardize access to CSRF token in JavaScript
+  Do not clone the repo when running the review-docs jobs
+  Don''t memoize storage configuration on `FsShardsCheck`
+  Document that group Owners can always create subgroups
+  Auto DevOps docs cleanup
+  Display full pre-receive and post-receive hook output in GitLab UI
+  Adds EE tag detection to remove_old in gitlab backup.
+  Correctly detect multiple issue URLs after ''Closes...'' in MR descriptions
+  new sharing permissions
+  IssueNotes: Resize comment form after note submit and discard.
+  [skip ci] Add changelog
+  Make resolve discussion icon gray
+  update spacing
+  Deleted another Fixture due to User Callout
+  ...
+",07b0d933b523b22464c72e0dd85bc413f455b72f,2017-09-22 10:37:19+02
+"Merge branch ''sh-bump-nokogiri'' into ''master''
+
+Upgrade Nokogiri because of CVE-2017-9050
+
+See merge request gitlab-org/gitlab-ee!2996",fc805edf904ec712769fd2806c4154efba83b45d,2017-09-22 10:43:48+02
+"Merge remote-tracking branch ''upstream/master'' into ce-to-ee-2017-09-22
+
+* upstream/master: (26 commits)
+  Resolve '"Better SVG Usage in the Frontend'"
+  Replace the ''project/service.feature'' spinach test with an rspec analog
+  Removed two legacy config options
+  Fix rendering double note issue.
+  IssueNotes: Switch back to Write pane when note cancel or submit.
+  Upgrade Nokogiri because of CVE-2017-9050
+  Bump VERSION to 10.1.0-pre
+  Standardize access to CSRF token in JavaScript
+  Do not clone the repo when running the review-docs jobs
+  Don''t memoize storage configuration on `FsShardsCheck`
+  Document that group Owners can always create subgroups
+  Auto DevOps docs cleanup
+  Display full pre-receive and post-receive hook output in GitLab UI
+  Simplify a test
+  Adds EE tag detection to remove_old in gitlab backup.
+  Correctly detect multiple issue URLs after ''Closes...'' in MR descriptions
+  new sharing permissions
+  IssueNotes: Resize comment form after note submit and discard.
+  [skip ci] Add changelog
+  update spacing
+  ...
+",3efcb46a3d5202ffe25b03f7a35d862949768254,2017-09-22 12:46:53+02
+"Merge branch ''master'' into 34371-cycle-analitcs
+
+* master: (53 commits)
+  Update CHANGELOG.md for 10.0.0
+  Reserve refs/replace cos `git-replace` is using it
+  Resolve '"Better SVG Usage in the Frontend'"
+  Replace the ''project/service.feature'' spinach test with an rspec analog
+  Replace the ''project/shortcuts.feature'' spinach test with an rspec analog
+  Removed two legacy config options
+  Fix rendering double note issue.
+  IssueNotes: Switch back to Write pane when note cancel or submit.
+  Upgrade Nokogiri because of CVE-2017-9050
+  Bump VERSION to 10.1.0-pre
+  Ensure that Blob.raw returns always returns a valid blob object
+  Fix rake gitlab:incoming_email:check and make it
+  Standardize access to CSRF token in JavaScript
+  Do not clone the repo when running the review-docs jobs
+  Don''t memoize storage configuration on `FsShardsCheck`
+  Adds gitlab features and components to usage ping data.
+  Document that group Owners can always create subgroups
+  Auto DevOps docs cleanup
+  Display full pre-receive and post-receive hook output in GitLab UI
+  Index projects on repository storage
+  ...
+",40e32546f5041fd848ffd2f232850a9c51feb59c,2017-09-22 16:54:05+02
+"Merge remote-tracking branch ''upstream/master'' into no-ivar-in-modules
+
+* upstream/master: (168 commits)
+  Update CHANGELOG.md for 10.0.1
+  Remove Grit settings from default settings
+  Fix duplicate key errors in PostDeployMigrateUserExternalMailData migration
+  Workaround for #38259
+  Workaround for n+1 in Projects::TreeController#show
+  Removed old icons from project page
+  Make branches page translatable
+  fix typo in icons section
+  Don''t show it if there''s no project.
+  Update CHANGELOG.md for 10.0.0
+  Inform user that current shared projects will remain shared
+  Allow the git circuit breaker to correctly handle missing repository storages
+  Reserve refs/replace cos `git-replace` is using it
+  Resolve '"Better SVG Usage in the Frontend'"
+  Replace the ''project/service.feature'' spinach test with an rspec analog
+  Replace the ''project/shortcuts.feature'' spinach test with an rspec analog
+  Removed two legacy config options
+  Fix rendering double note issue.
+  IssueNotes: Switch back to Write pane when note cancel or submit.
+  Upgrade Nokogiri because of CVE-2017-9050
+  ...
+",239332eed3fa870fd41be83864882c0f389840d8,2017-09-25 09:42:34+02
+"Merge branch ''winh-upgrade-nokogiri'' into ''master''
+
+Upgrade Nokogiri because of CVE-2017-9050
+
+See merge request gitlab-org/gitlab-ce!14427",ba56027e7be613b1cdd161d8af7afce1ee459e68,2017-09-25 19:09:01+02
+"Merge branch ''winh-upgrade-nokogiri'' into ''master''
+
+Upgrade Nokogiri because of CVE-2017-9050
+
+See merge request gitlab-org/gitlab-ce!14427
+",80ef42d6555ad64eb8e2b7e4e8333fd7ac218ee2,2017-09-25 19:10:46+02
+"Merge branch ''winh-upgrade-nokogiri'' into ''master''
+
+Upgrade Nokogiri because of CVE-2017-9050
+
+See merge request gitlab-org/gitlab-ce!14427
+",00106a1b940c98149a1f71511dca353fb0225cf5,2017-09-25 19:11:43+02
+"Merge branch ''winh-upgrade-nokogiri'' into ''master''
+
+Upgrade Nokogiri because of CVE-2017-9050
+
+See merge request gitlab-org/gitlab-ce!14427
+",7d4ad67b8fa0124680eebb20f39f0eb06c524e58,2017-09-28 19:01:01+02
+"Merge branch ''winh-upgrade-nokogiri'' into ''master''
+
+Upgrade Nokogiri because of CVE-2017-9050
+
+See merge request gitlab-org/gitlab-ce!14427
+",0190b014508c30cad86e55663010ba63f64c1016,2017-10-12 18:10:00+02
+"Described how querysets are protected from SQL injection in more detail.
+",6e8508734b070b30db9259b64bb748fb2a5a1bfb,2017-11-01 16:34:17+01
+"[2.0.x] Described how querysets are protected from SQL injection in more detail.
+
+Backport of 6e8508734b070b30db9259b64bb748fb2a5a1bfb from master
+",29c97fa6b7067c06f5effb2136161d9564ccd5b6,2017-11-01 16:53:15+01
+"Fixed #28770 -- Warned that quoting a placeholder in a raw SQL string can lead to SQL injection.
+
+Thanks Hynek Cernoch for the report and review.
+",07e7900c3baf4ec25881819aa9b091436a613a8d,2017-11-07 17:34:00+01
+"dashboard history clean up: avoid potential SQL injections
+",a55be07ea52546568d45540c1d0a0c4a3e9f1e48,2017-11-17 08:51:50+01
+"Fix security post. GitLab < 10.1 is not affected by CVE-2017-0917
+",b16343b6924537a291eccb98b04ba4920d92a47d,2018-01-17 09:13:07+01
+"Merge branch ''fix-xss-affected-versions'' into ''master''
+
+Fix security post. GitLab < 10.1 is not affected by CVE-2017-0917
+
+See merge request gitlab-com/www-gitlab-com!9499",bdac13a983758d2b8bc0746b0b2a1c5e9837b761,2018-01-18 06:35:53+01
+"Disallow launching unknown apps via browser client.
+
+CVE-2018-1000006
+",e7074c5cdb1973ede8da4713ad079d2afa850cc8,2018-01-22 21:53:17+01
+"Disallow launching unknown apps via browser client.
+
+CVE-2018-1000006
+",ad0f44843d5bad52b09210ca019fa77308d0c778,2018-01-22 22:26:47+01
+"Disallow launching unknown apps via browser client.
+
+CVE-2018-1000006
+",a250089a40f76726cf5980a1f454e600037835aa,2018-01-22 22:40:46+01
+"Disallow launching unknown apps via browser client.
+
+CVE-2018-1000006
+",c49cb29ddf3368daf279bd60c007f9c015bc834c,2018-01-22 23:49:30+01
+"Disallow launching unknown apps via browser client.
+
+CVE-2018-1000006
+",4e66fcce29c113c81fdd10d11d7071227f20acfe,2018-01-23 14:42:22+01
+"Disallow launching unknown apps via browser client.
+
+CVE-2018-1000006
+",7c61f5bbb657b83e67d51a346c8ca72b8c9c778c,2018-01-26 00:57:10+01
+:arrow_up: electron 1.6.16 to Fix protocol handler bug. CVE-2018-1000006,2ebb425b9f85414c1283e73a252b7572a63502da,2018-01-27 08:37:37+01
+"security: Backport for CVE-2016-7401 from Django 1.8.15
+",48cce31f1a298888408733c1cd367249a887f645,2018-01-29 22:51:10+01
+"security: Backport for CVE-2016-7401 from Django 1.8.15
+",568aa28f78010f0d70e238af16db2accafa6aa5d,2018-01-29 23:09:41+01
+"Upgrade Paperclip > 5.2.1
+
+Mitigation for CVE-2017-0889.
+
+https://www.cvedetails.com/cve/CVE-2017-0889/
+https://medium.com/in-the-weeds/all-about-paperclips-cve-2017-0889-server-side-request-forgery-ssrf-vulnerability-8cb2b1c96fe8
+",e1c069e21f5a7a2ad8166fb66b0c106a20e0442d,2018-02-01 09:46:05+01
+"Fixed CVE-2018-6188 -- Fixed information leakage in AuthenticationForm.
+
+Reverted 359370a8b8ca0efe99b1d4630b291ec060b69225 (refs #28645).
+
+This is a security fix.
+",af33fb250e9847f1ca8c0ba0d72671d76659704f,2018-02-01 15:05:14+01
+"[2.0.x] Fixed CVE-2018-6188 -- Fixed information leakage in AuthenticationForm.
+
+Reverted 359370a8b8ca0efe99b1d4630b291ec060b69225 (refs #28645).
+
+This is a security fix.
+",c37bb28677295f6edda61d8ac461014ef0d3aeb2,2018-02-01 15:13:59+01
+"[1.11.x] Fixed CVE-2018-6188 -- Fixed information leakage in AuthenticationForm.
+
+Reverted 359370a8b8ca0efe99b1d4630b291ec060b69225 (refs #28645).
+
+This is a security fix.
+",57b95fedad5e0b83fc9c81466b7d1751c6427aae,2018-02-01 15:18:33+01
+"Added CVE-2018-6188 to the security release archive.
+",66119ed64233c3abe586606a9e81a75edc2a6a92,2018-02-01 16:14:17+01
+"[2.0.x] Added CVE-2018-6188 to the security release archive.
+
+Backport of 66119ed64233c3abe586606a9e81a75edc2a6a92 from master
+",ab505a272fa2934371eccb254a66d16f73023c63,2018-02-01 16:16:35+01
+"[1.11.x] Added CVE-2018-6188 to the security release archive.
+
+Backport of 66119ed64233c3abe586606a9e81a75edc2a6a92 from master
+",01448a97e075df08ed0f89c443ee35e649dfb630,2018-02-01 16:16:48+01
+"Upgrade Paperclip > 5.2.1 (#6404)
+
+Mitigation for CVE-2017-0889.
+
+https://www.cvedetails.com/cve/CVE-2017-0889/
+https://medium.com/in-the-weeds/all-about-paperclips-cve-2017-0889-server-side-request-forgery-ssrf-vulnerability-8cb2b1c96fe8",f4bd51da1e4236fce5d46d76136bb2ef4a0e51ed,2018-02-01 17:54:22+01
+"chore: update dependencies with CVE
+
+See:
+* https://github.com/zurb/supercollider/pull/16
+* https://github.com/zurb/panini/pull/158
+* https://github.com/zurb/foundation-docs/pull/27
+
+Update packages:
+* `handlebars`: `2.0.0`-> `4.0.1` (https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-8861)
+* `uglify-js`: `2.3.6` -> `2.8.29` (https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-8857, https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-8858)
+* `marked`: `0.3.6` -> `0.3.14` (https://nvd.nist.gov/vuln/detail/CVE-2017-1000427)
+",c19edffb8cf846010b1db58c8d81cc132535131e,2018-02-23 23:47:47+01
+"[1.11.x] Fixed CVE-2018-7536 -- Fixed catastrophic backtracking in urlize and urlizetrunc template filters.
+
+Thanks Florian Apolloner for assisting with the patch.
+",abf89d729f210c692a50e0ad3f75fb6bec6fae16,2018-02-27 19:54:19+01
+"[1.11.x] Fixed CVE-2018-7537 -- Fixed catastrophic backtracking in django.utils.text.Truncator.
+
+Thanks James Davis for suggesting the fix.
+",a91436360b79a6ff995c3e5018bcc666dfaf1539,2018-02-27 19:56:26+01
+"Update omniauth-saml to 1.10
+
+Fixes CVE-2017-11428
+",c90d335e588705185ed9320649dbc41bf4dcc7c9,2018-03-02 01:57:38+01
+"Update omniauth-saml to 1.10 (#6587)
+
+Fixes CVE-2017-11428",e4db0f28d29e391108154d57606f3cb2c48d67e2,2018-03-02 02:32:08+01
+"Upgrade moment for CVE-2017-18214
+
+For more info, see: https://nvd.nist.gov/vuln/detail/CVE-2017-18214
+
+This is currently triggering github security alerts on all projects using keystone 4.x",2e077d13fee24b7908371f475c67f4e83d860f94,2018-03-06 09:37:31+01
+"Upgrade moment for CVE-2017-18214 (#4592)
+
+For more info, see: https://nvd.nist.gov/vuln/detail/CVE-2017-18214
+
+This is currently triggering github security alerts on all projects using keystone 4.x",a1333e38b45a092e2c3413f96bb5e297c8d1a957,2018-03-06 14:23:20+01
+"Fixed CVE-2018-7537 -- Fixed catastrophic backtracking in django.utils.text.Truncator.
+
+Thanks James Davis for suggesting the fix.
+",97b7dd59bb8d6163239061e2022153c3415d146d,2018-03-06 14:30:40+01
+"Fixed CVE-2018-7536 -- Fixed catastrophic backtracking in urlize and urlizetrunc template filters.
+
+Thanks Florian Apolloner for assisting with the patch.
+",8618271caa0b09daba39ff3b46567d33ae1e1d3a,2018-03-06 14:30:40+01
+"[2.0.x] Fixed CVE-2018-7536 -- Fixed catastrophic backtracking in urlize and urlizetrunc template filters.
+
+Thanks Florian Apolloner for assisting with the patch.
+",e157315da3ae7005fa0683ffc9751dbeca7306c8,2018-03-06 14:52:23+01
+"[2.0.x] Fixed CVE-2018-7537 -- Fixed catastrophic backtracking in django.utils.text.Truncator.
+
+Thanks James Davis for suggesting the fix.
+",94c5da1d17a6b0d378866c66b605102c19f7988c,2018-03-06 14:52:23+01
+"Added CVE-2018-7536,7 to the security release archive.
+",5bbbdd26d1ea4f3bb164ad64b0d0d458d8bfdd02,2018-03-06 18:59:36+01
+"[2.0.x] Added CVE-2018-7536,7 to the security release archive.
+
+Backport of 5bbbdd26d1ea4f3bb164ad64b0d0d458d8bfdd02 from master
+",7636aca6771649c41df96fd4a6eb3226a1c5a4fa,2018-03-06 19:04:28+01
+"[1.11.x] Added CVE-2018-7536,7 to the security release archive.
+
+Backport of 5bbbdd26d1ea4f3bb164ad64b0d0d458d8bfdd02 from master
+",c8e5c1f4205078d8b58420cc585917384e51dab2,2018-03-06 19:04:55+01
+"Merge branch ''43806-update-ruby-saml-to-1.7.2'' into ''master''
+
+Update ruby-saml to 1.7.2 and omniauth-saml to 1.10.0 (CVE-2017-11428, CVE-2017-11430)
+
+Closes #43806
+
+See merge request gitlab-org/gitlab-ce!17734",2dca1bc04d82ebcf9629a51c5ea285957a5fccda,2018-03-14 19:13:28+01
+"Fix affected versions of CVE-2017-0927 and CVE-2017-0923
+
+Refer: https://gitlab.com/gitlab-org/gitlab-ce/issues/44244#note_63273089
+",43256e718efab398741d9ab4c292bc3355507c8b,2018-03-15 10:19:37+01
+"Update electron (CVE-2018-1000006) and react package
+",9b2af253586982ce9f5c3ea487bdc32622797f08,2018-03-15 23:43:25+01
+"Merge pull request #1294 from railsware/security-update-npms
+
+Update electron (CVE-2018-1000006) and react package",60a23ee1a741207b0ea8639b273b05a78b94b5ce,2018-03-16 14:33:02+01
+"Merge branch ''fix-10-3-4-blog-post'' into ''master''
+
+Fix affected versions of CVE-2017-0927 and CVE-2017-0923 in blog post
+
+See merge request gitlab-com/www-gitlab-com!10553",417e4b83968eb433ac4712241caadfa5e28eb6f3,2018-03-19 12:12:49+01
+"Fixed possible SQL injection through `ActiveRecord::findOne()`
+",b37f361ad74e531a8e3e1f34cfd17b3e0b7d8e69,2018-03-20 11:20:56+01
+"Fixed possible SQL injection through
+",4608bbc8d97b381b9d1431aecf358d554bc8d47b,2018-03-20 12:51:46+01
+"Fixed possible SQL injection through
+",25295129dc436a0e6b0ac454d6ca6f374c10c845,2018-03-20 13:28:46+01
+"Merge branch ''2.0.15-dev''
+
+* 2.0.15-dev:
+  prepare for next release
+  release version 2.0.15
+  remove ColumnSchema import from mysql Schema because it conflicts with existing class
+  Added russian docs
+  Fixed grammar
+  improved filtering condition on yii\\db\\ActiveRecord
+  Wording adjustments and doc enhancements [skip ci]
+  Fixed possible SQL injection through `ActiveRecord::findOne()`
+  Fixes #15878: Fixed migration with a comment containing an apostrophe
+
+Conflicts:
+	framework/UPGRADE.md
+",52ffaa1b25f09f34add73085adb4fd6a0f4f7139,2018-03-20 13:45:22+01
+"Update sanitize and loofah
+
+Fixes CVE-2018-8048 and CVE-2018-3740, two medium-severity XSS
+vulnerabilities present in these gems when built against
+libxml2 >= 2.9.2.
+",1f388fd13b4cc96fd7b12122b71a3b0ec2f381dd,2018-03-21 16:19:19+01
+"Update sanitize and loofah (#6855)
+
+Fixes CVE-2018-8048 and CVE-2018-3740, two medium-severity XSS
+vulnerabilities present in these gems when built against
+libxml2 >= 2.9.2.",d97903a3587e137316adbd8a9f0460552b5bfbcd,2018-03-21 17:43:28+01
+"allow to set connection schema in settings.py
+
+FIXME: pattern '"sql query'" % param is bad practice and allows SQL Injection. It can be exploied in this example:
+''SCHEMA'': ''MYSCHEMA; DROP DATABASE''
+But who in clear mind will set this schema?",89410a0f8700824844eeca6af132538d56141a37,2018-03-26 23:02:27+02
+"settings.py: SCHEMA field (#1)
+
+* allow to set connection schema in settings.py
+
+FIXME: pattern '"sql query'" % param is bad practice and allows SQL Injection. It can be exploied in this example:
+''SCHEMA'': ''MYSCHEMA; DROP DATABASE''
+But who in clear mind will set this schema?
+
+* hotfix
+",0338aa69f000b43a9d94232d42b0e1e5f170be46,2018-03-27 19:22:33+02
+"Update Ruby to version 2.4.4
+
+https://www.ruby-lang.org/en/news/2018/03/28/ruby-2-4-4-released/
+
+> This release includes some bug fixes and some security fixes.
+>
+> - CVE-2017-17742: HTTP response splitting in WEBrick
+> - CVE-2018-6914: Unintentional file and directory creation with directory traversal in tempfile and tmpdir
+> - CVE-2018-8777: DoS by large request in WEBrick
+> - CVE-2018-8778: Buffer under-read in String#unpack
+> - CVE-2018-8779: Unintentional socket creation by poisoned NUL byte in UNIXServer and UNIXSocket
+> - CVE-2018-8780: Unintentional directory traversal by poisoned NUL byte in Dir
+> - Multiple vulnerabilities in RubyGems
+",0e7f450ed7a99b7c39bdbe15c4cd07f1e0019d6b,2018-03-31 14:32:50+02
+"Update Ruby to version 2.4.4 (#6964)
+
+https://www.ruby-lang.org/en/news/2018/03/28/ruby-2-4-4-released/
+
+> This release includes some bug fixes and some security fixes.
+>
+> - CVE-2017-17742: HTTP response splitting in WEBrick
+> - CVE-2018-6914: Unintentional file and directory creation with directory traversal in tempfile and tmpdir
+> - CVE-2018-8777: DoS by large request in WEBrick
+> - CVE-2018-8778: Buffer under-read in String#unpack
+> - CVE-2018-8779: Unintentional socket creation by poisoned NUL byte in UNIXServer and UNIXSocket
+> - CVE-2018-8780: Unintentional directory traversal by poisoned NUL byte in Dir
+> - Multiple vulnerabilities in RubyGems",f464f98fd3b8ef33b3afa5acf09e829c046134de,2018-04-01 23:43:08+02
+"Bump nokogiri to 1.8.2 in qa Gemfile
+
+Resolves CVE-2017-18258
+",5ed0e4b4ce1b362580075424c428332b83eb59bc,2018-05-01 17:57:29+02
+"Udate hoek (CVE-2018-3728) and remove Selenium
+",a68ebe11469f85a81640501414be171c41177b50,2018-05-07 14:34:00+02
+"SECURITY: update sprockets for CVE-2018-3760
+",8ea29c51aef6cc7c68dc963a9b7d916ac941bcc6,2018-06-20 01:49:26+02
+"SECURITY: update sprockets for CVE-2018-3760
+",f2cb89b0d2de23fc064f507d23bef85831287d45,2018-06-20 01:50:28+02
+"SECURITY: update sprockets for CVE-2018-3760
+",8d6fbe1769b2a0f7b1cd502c4f679cd52db2cdcd,2018-06-20 01:50:54+02
+"Bump sprockets to 3.7.2 to address CVE-2018-3760
+",fce42cbc8ac47285c24cc60de82d7a2dd25c1184,2018-06-22 18:10:15+02
+"Merge branch ''rs-update-sprockets'' into ''master''
+
+Bump sprockets to 3.7.2 to address CVE-2018-3760
+
+See merge request gitlab-org/gitlab-ce!20109",95842f230bbce6204d2ad547c7b2be1d73deeee9,2018-06-22 18:49:18+02
+"Merge branch ''master'' into fl-fix-tech-debt
+
+* master: (67 commits)
+  (Part 1) Resolve '"Recognise when a user is trying to validate a private SSH key'"
+  Fix auto_cancel_pending_pipelines check
+  Resolve '"2FA should not attempt to use U2F in unsupported browsers'"
+  Resolve '"Change the BitBucket import page to indicate that its for BB Cloud only, not for on-prem BB'"
+  Resolve '"Help users find our contributing page'"
+  Docs broken links
+  Refactor issue boards and get the EE changes to CE
+  Adds test to cover the fix in #45575
+  Log push output on exception
+  Update gitlab_chart.md
+  Remove top margin for bootstrap popover headers
+  Bump sprockets to 3.7.2 to address CVE-2018-3760
+  Bring changes from EE
+  Bring changes from EE
+  Simplify the decode secret step
+  Cleanup ruby sampler metrics
+  Raw diffs are served from Gitaly
+  add inline badges to auto devops feature list
+  Add more large tables to cop
+  Bring changes from EE
+  ...
+",ab339cf68b4d7cbc05a20e3555f86980b7c0d91c,2018-06-25 11:05:26+02
+"Merge branch ''master'' into fl-fix-tech-debt
+
+* master: (67 commits)
+  (Part 1) Resolve '"Recognise when a user is trying to validate a private SSH key'"
+  Fix auto_cancel_pending_pipelines check
+  Resolve '"2FA should not attempt to use U2F in unsupported browsers'"
+  Resolve '"Change the BitBucket import page to indicate that its for BB Cloud only, not for on-prem BB'"
+  Resolve '"Help users find our contributing page'"
+  Docs broken links
+  Refactor issue boards and get the EE changes to CE
+  Adds test to cover the fix in #45575
+  Log push output on exception
+  Update gitlab_chart.md
+  Remove top margin for bootstrap popover headers
+  Bump sprockets to 3.7.2 to address CVE-2018-3760
+  Bring changes from EE
+  Bring changes from EE
+  Simplify the decode secret step
+  Cleanup ruby sampler metrics
+  Raw diffs are served from Gitaly
+  add inline badges to auto devops feature list
+  Add more large tables to cop
+  Bring changes from EE
+  ...
+",39a791fa537b000aa396052b3487a28ccfbaeaea,2018-06-25 12:46:40+02
+"Merge branch ''rs-update-sprockets'' into ''master''
+
+Bump sprockets to 3.7.2 to address CVE-2018-3760
+
+See merge request gitlab-org/gitlab-ce!20109",28aa8a31dc9adf32684557edfcfc173a2155ac82,2018-06-25 13:57:32+02
+"Merge branch ''master'' into 6078-add-permissions-checks-dismiss-issue
+
+* master: (189 commits)
+  Remove redundant callbacks
+  (Part 1) Resolve '"Recognise when a user is trying to validate a private SSH key'"
+  Fix auto_cancel_pending_pipelines check
+  Resolve '"2FA should not attempt to use U2F in unsupported browsers'"
+  Resolve '"Change the BitBucket import page to indicate that its for BB Cloud only, not for on-prem BB'"
+  Resolve '"Help users find our contributing page'"
+  Docs broken links
+  Refactor issue boards and get the EE changes to CE
+  [Rails5] Fix error on missed :authenticate_user callback
+  Delete non-latest merge request diff files upon diffs reload
+  Adds test to cover the fix in #45575
+  Log push output on exception
+  Update issue_board.md
+  edit issue_board.md
+  edits to issue_board.md
+  Update gitlab_chart.md
+  Add note about license management first run
+  Remove top margin for bootstrap popover headers
+  Bump sprockets to 3.7.2 to address CVE-2018-3760
+  Bring changes from EE
+  ...
+",21f1b16ea286103a454bc44a518b8b12e92af207,2018-06-25 17:22:36+02
+"Merge branch ''rs-update-sprockets'' into ''master''
+
+Bump sprockets to 3.7.2 to address CVE-2018-3760
+
+See merge request gitlab-org/gitlab-ce!20109",9829032c97f86e21a5bba0aee5b9affb3f08f350,2018-06-25 19:09:39+02
+"[1.11.x] Fixed CVE-2018-14574 -- Fixed open redirect possibility in CommonMiddleware.
+",d6eaee092709aad477a9894598496c6deec532ff,2018-07-25 18:13:03+02
+"[2.0.x] Fixed CVE-2018-14574 -- Fixed open redirect possibility in CommonMiddleware.
+",6fffc3c6d420e44f4029d5643f38d00a39b08525,2018-07-31 16:37:29+02
+"Fixed CVE-2018-14574 -- Fixed open redirect possibility in CommonMiddleware.
+",a656a681272f8f3734b6eb38e9a88aa0d91806f1,2018-08-01 15:28:42+02
+"[2.1.x] Fixed CVE-2018-14574 -- Fixed open redirect possibility in CommonMiddleware.
+",c4e5ff7fdb5fce447675e90291fd33fddd052b3c,2018-08-01 15:35:09+02
+"Added CVE-2018-14574 to the security release archive.
+",0006538e53bf11d1de26801b13b78807354de2c8,2018-08-01 16:51:24+02
+"[2.1.x] Added CVE-2018-14574 to the security release archive.
+
+Backport of 0006538e53bf11d1de26801b13b78807354de2c8 from master
+",3dc02de7618c3e5b058f6b6aff22c55c818584ca,2018-08-01 17:07:18+02
+"[2.0.x] Added CVE-2018-14574 to the security release archive.
+
+Backport of 0006538e53bf11d1de26801b13b78807354de2c8 from master
+",e7dffda16729e79194813427c775c94f141f127c,2018-08-01 17:07:28+02
+"[1.11.x] Added CVE-2018-14574 to the security release archive.
+
+Backport of 0006538e53bf11d1de26801b13b78807354de2c8 from master
+",98c77c5a700eed4bd314a40ab70904db0c0adac6,2018-08-01 17:07:37+02
+"Merge pull request #1623 from sveltejs/CVE-2018-6341
+
+Sanitize spread attributes in SSR",065d0f7411dd1df91a7d26c6a0103e2d0870cf3c,2018-08-01 23:37:57+02
+"make method less generic, eliminate SQL injection risks
+",f7cf5797a080cbf7ff6acfc0dcfac64918026c83,2018-08-06 22:59:58+02
+"fix(collapse): xss CVE-2018-14040
+
+Fixes #26625
+",2b4597a20055bf6ee7896008f65443b9d3e20e6b,2018-08-10 14:03:09+02
+"fix(tooltip): xss CVE-2018-14042
+
+Fixes #26628
+",7cfc6a94333bf4e290dd6bc3f8184565a2b36d61,2018-08-10 14:03:44+02
+"Fix/xss issues on data attributes (#27047)
+
+* fix(collapse): xss CVE-2018-14040
+
+Fixes #26625
+
+* fix(tooltip): xss CVE-2018-14042
+
+Fixes #26628
+
+* fix(tooltip): XSS on data-viewport attribute
+
+Fixes #27044
+
+* fix(affix): XSS on target config
+
+Fixes #27045
+",2a5ba23ce8f041f3548317acc992ed8a736b609d,2018-08-13 18:09:18+02
+"FIX: add a basic validator for topic params
+
+This cuts down on log noise when people try out sql injection
+",ad5f502332aaab2cd1a642269674da3f794e1001,2018-08-14 09:01:04+02
+"Bump lodash dependency (#20892)
+
+Summary:
+Per [CVE](https://nvd.nist.gov/vuln/detail/CVE-2018-3721) warning.
+Pull Request resolved: https://github.com/facebook/react-native/pull/20892
+
+Differential Revision: D9616099
+
+Pulled By: hramos
+
+fbshipit-source-id: 245c09ca32934c5e5464f87bfca213f1b10f8fec
+",792cd0902ef834fe37c85b592f94bc9d84c5f03b,2018-08-31 21:19:04+02

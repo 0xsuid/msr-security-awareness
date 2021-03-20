@@ -106,6 +106,12 @@ function create_tables {
     printf "Creating Table cve_revs_py - est. time(~5-10 mins)\n"
     psql -U postgres swhgd-popular-4k < $SCRIPT_PATH/../../process/sql/create_table_cve_revs_py.sql
     printf "Successfully Created Table cve_revs_py\n"
+    printf "Creating Table cve_revs_test_js - est. time(~5-15 mins)\n"
+    psql -U postgres swhgd-popular-4k < $SCRIPT_PATH/../../process/sql/modified_for_threats/create_table_cve_revs_test_js.sql
+    printf "Successfully Created Table cve_revs_js"
+    printf "Creating Table cve_revs_test_py - est. time(~5-15 mins)\n"
+    psql -U postgres swhgd-popular-4k < $SCRIPT_PATH/../../process/sql/modified_for_threats/create_table_cve_revs_test_py.sql
+    printf "Successfully Created Table cve_revs_py\n"
     menu
 }
 

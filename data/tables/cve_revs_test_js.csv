@@ -1,0 +1,264 @@
+some sql injection prevention + tests,6394c5b660280cf32b6660b6f321d9f045597927,2011-03-27 10:18:31+02,".gitignore,README.md,changelog.md,index.js,package.json"
+"Cleaned up scopes/smartwhere, added another spec to make sure SQL is escaped, and fixed potential SQL injection problem with sqlite
+",3654655138d6ab6c644649dbb3a578740a5830cd,2013-07-16 09:19:36+02,".gitignore,.gitmodules,.jshintrc,.travis.yml,.watchr.js,LICENSE,README.md,changelog.md,index.js,package.json"
+"(#1170) Escape startkey/endkey in WebSQL allDocs()
+
+Properly escape the startkey/endkey to avoid SQL injection
+vulnerabilities or problems with invalid characters.
+",ac097a2fef35bb08dd03479e11170b90e1ba6679,2013-12-21 09:51:45+01,".gitignore,.jshintrc,.travis.yml,CONTRIBUTING.md,LICENSE,README.md,bower.json,component.json,manifest.json,package.json"
+"(#1170) Escape startkey/endkey in WebSQL allDocs()
+
+Properly escape the startkey/endkey to avoid SQL injection
+vulnerabilities or problems with invalid characters.
+",59b1f9e003b9858796bbbe7f5f476b3cba527c26,2013-12-21 20:41:31+01,".gitignore,.jshintrc,.travis.yml,CONTRIBUTING.md,LICENSE,README.md,bower.json,component.json,manifest.json,package.json"
+"(#1743) - escape sql in websql''s doCompaction
+
+This should be the final SQL injection fix. I don''t
+see quote() being used anywhere else, except for
+static db names.
+",5f2ef9ca46991057f3ea541361d08b68ca72f358,2014-03-26 22:49:30+01,".gitignore,.jshintrc,.travis.yml,CONTRIBUTING.md,LICENSE,README.md,bower.json,component.json,manifest.json,package.json"
+"(#1743) - escape sql in websql''s doCompaction
+
+This should be the final SQL injection fix. I don''t
+see quote() being used anywhere else, except for
+static db names.
+",7c69b64d1d65b4078fa97d74704e8310d905c08c,2014-03-27 18:43:39+01,".gitignore,.jshintrc,.travis.yml,CONTRIBUTING.md,LICENSE,README.md,bower.json,component.json,manifest.json,package.json"
+"readme: multiple statement clarification
+
+Allowing multiple statement dosen''t in itself expose you to sql injection attacks. It only does so if you already allow unsanitized input in your queries, which you should never do.
+",e5ebc304159af329beff57b23c72bf68beb25dd4,2015-03-20 16:08:04+01,".gitignore,.npmignore,.travis.yml,Changes.md,License,Readme.md,appveyor.yml,index.js,package.json"
+"Added SQL injection for bypassing logins.
+",f0fecb173f9117c7b5cffaf04f7d797fb4421303,2015-08-19 04:15:37+02,".gitattributes,LICENSE,README.md,blns.json,blns.txt,package.json"
+"Merge pull request #54 from pgrochowski/master
+
+Added SQL injection for bypassing logins.",30ea4630514b766b2a1070e6a20df2aeb583cbea,2015-08-19 05:36:40+02,".gitattributes,LICENSE,README.md,blns.json,blns.txt,package.json"
+"Update libxml2 dependency CVE-2016-4448 #515
+
+Also updates:
+* libpng as previous version is now unavailable (?)
+* libjpeg as previous version was pre-release
+",762cda75a91278133fd9397e19080e13a7d6cc07,2016-07-18 13:07:28+02,".editorconfig,.gitignore,.jshintignore,.jshintrc,.npmignore,.travis.yml,CONTRIBUTING.md,LICENSE,README.md,appveyor.yml,binding.gyp,binding.js,circle.yml,index.js,mkdocs.yml,package.json,preinstall.sh"
+"mysql case for GEOGRAPHY/GEOMETRY sql injection
+",18ac91040d9c57351d26ba998f460e214255b704,2016-07-19 11:11:25+02,".dockerignore,.editorconfig,.gitignore,.gitmodules,.jshintrc,.npmignore,.travis.yml,CONTRIBUTING.DOCS.md,CONTRIBUTING.md,Dockerfile,LICENSE,README.md,changelog.md,docker-compose.yml,index.js,mkdocs.yml,package.json,sscce_template.js"
+"mysql case for GEOGRAPHY/GEOMETRY sql injection (#6306)
+
+",562d52585902090f4e53eb21c61314098c29d795,2016-07-19 13:50:26+02,".dockerignore,.editorconfig,.gitignore,.gitmodules,.jshintrc,.npmignore,.travis.yml,CONTRIBUTING.DOCS.md,CONTRIBUTING.md,Dockerfile,LICENSE,README.md,changelog.md,docker-compose.yml,index.js,mkdocs.yml,package.json,sscce_template.js"
+"mysql case for GEOGRAPHY/GEOMETRY sql injection (#6306)
+
+",ea6ee1a2251f8a5655d749eb6b97680538cad4c2,2016-07-28 11:11:32+02,".dockerignore,.editorconfig,.gitignore,.gitmodules,.jshintrc,.npmignore,.travis.yml,CONTRIBUTING.DOCS.md,CONTRIBUTING.md,Dockerfile,LICENSE,README.md,changelog.md,docker-compose.yml,index.js,mkdocs.yml,package.json,sscce_template.js"
+"Added EmailValidatorTest to prove CVE-2016-10074 does not affect EmailValidator
+",6af2a433909a25be951a362f8e56ce58dcbbe180,2016-12-28 23:21:23+01,"LICENSE.md,README.md,code-of-conduct.md,composer.json,composer.lock,package.json,phpunit.xml.dist,.codeclimate.yml,.editorconfig,.eslintignore,.eslintrc,.gitattributes,.gitignore,.scrutinizer.yml,.travis.yml"
+"added more tests for SwiftMailer vulnerability CVE-2016-10074
+
+https://legalhackers.com/advisories/SwiftMailer-Exploit-Remote-Code-Exec-CVE-2016-10074-Vuln.html
+",96ee5c373e529eb3313bf8174ab095ab12588f21,2016-12-28 23:50:10+01,".editorconfig,.scrutinizer.yml,.travis.yml,LICENSE.md,README.md,code-of-conduct.md,composer.json,composer.lock,.gitignore,.gitattributes,.eslintrc,.eslintignore,.codeclimate.yml,package.json,phpunit.xml.dist"
+"Refactored support for ORDER BY clause so SQL injection is not possible.
+",5ef84930f4dd8dea9c1b9d3ee3f99ca02a0963cf,2017-01-28 00:00:37+01,"mkdocs.yml,sscce_template.js,.doclets.yml,.editorconfig,.eslintrc.json,.gitignore,.jshintrc,.mention-bot,.npmignore,.travis.yml,CONTACT.md,CONTRIBUTING.DOCS.md,CONTRIBUTING.md,LICENSE,README.md,appveyor-setup.ps1,appveyor.yml,changelog.md,codecov.yml,docker-compose.yml,index.js,package.json"
+"6935 remove order string syntax (#7160)
+
+* Refactored support for ORDER BY clause so SQL injection is not possible.
+
+* Adds sublime text files to gitignore.
+Modified changelog to accurately represent changes to the order property.
+Fixed lint issues.
+
+* Added rejection with error where Order must be type of Array or instance of sequelize literal.
+
+* Removed support for options.order accepting strings.
+@TODO Look into plain objects with property raw
+@TODO Update documentation and tests
+
+* Removed all direct lodash and replaced them with Utils.
+ie. `_.isPlainObject` is now `Utils._.isPlainObject`
+find: `(?s)(?<!Utils\\.)_\\.`
+replace : `Utils._.`
+
+* Updates documentation for findAll order.
+
+* Added removeTicks to addTicks in quoteIdentifier for each dialect.
+
+* Added documentation for order by only an array.
+
+* Added breaking change to changelog and renamed error to be more general.
+
+@TODO: TESTS!
+
+* Fixes bad code when checking if the order is valid.
+
+* Updated unit tests.
+
+* Should incorporate all integration tests.
+
+* Update changelog.md capitalize Sequelize
+
+* Changes everything in query generator to use lodash outside of utils.
+
+* Instead of checking if the order object is an instance of a Utils member we just see if `_.isSequelizeMethod` is truthy.
+
+* Removing escapeId because it is no longer used.
+
+* Instead of removing ticks, we should escape them.
+
+* Instead of removing ticks, we should escape them. (reverted from commit e4dade0a18be85dfaf8f91f1210bc0b5bedcb31a)
+",c12b36b8d3e06c2eba1aa3362467f3fa8175a597,2017-02-07 10:09:33+01,".npmignore,.mention-bot,.jshintrc,sscce_template.js,package.json,mkdocs.yml,index.js,docker-compose.yml,codecov.yml,changelog.md,appveyor.yml,appveyor-setup.ps1,.doclets.yml,.editorconfig,.eslintrc.json,.gitignore,README.md,LICENSE,CONTRIBUTING.md,CONTRIBUTING.DOCS.md,CONTACT.md,.travis.yml"
+"6935 remove order string syntax (#7220)
+
+* Refactored support for ORDER BY clause so SQL injection is not possible.
+
+* Adds sublime text files to gitignore.
+Modified changelog to accurately represent changes to the order property.
+Fixed lint issues.
+
+* Added rejection with error where Order must be type of Array or instance of sequelize literal.
+
+* Removed support for options.order accepting strings.
+@TODO Look into plain objects with property raw
+@TODO Update documentation and tests
+
+* Removed all direct lodash and replaced them with Utils.
+ie. `_.isPlainObject` is now `Utils._.isPlainObject`
+find: `(?s)(?<!Utils\\.)_\\.`
+replace : `Utils._.`
+
+* Updates documentation for findAll order.
+
+* Added removeTicks to addTicks in quoteIdentifier for each dialect.
+
+* Added documentation for order by only an array.
+
+* Added breaking change to changelog and renamed error to be more general.
+
+@TODO: TESTS!
+
+* Fixes bad code when checking if the order is valid.
+
+* Updated unit tests.
+
+* Should incorporate all integration tests.
+
+* Update changelog.md capitalize Sequelize
+
+* Changes everything in query generator to use lodash outside of utils.
+
+* Instead of checking if the order object is an instance of a Utils member we just see if `_.isSequelizeMethod` is truthy.
+
+* Removing escapeId because it is no longer used.
+
+* Instead of removing ticks, we should escape them.
+
+* Instead of removing ticks, we should escape them. (reverted from commit e4dade0a18be85dfaf8f91f1210bc0b5bedcb31a)
+
+* Removes support for `._isSequelizeMethod` because it can be spoofed.  Instead, use instanceof.
+",e22ce18db2bd52a7e60ee52865bfa5a994e8ab7a,2017-02-07 17:37:03+01,".jshintrc,.doclets.yml,.editorconfig,.eslintrc.json,.gitignore,.mention-bot,.npmignore,.travis.yml,CONTACT.md,CONTRIBUTING.DOCS.md,CONTRIBUTING.md,LICENSE,README.md,appveyor-setup.ps1,appveyor.yml,changelog.md,codecov.yml,docker-compose.yml,index.js,mkdocs.yml,package.json,sscce_template.js"
+"Removed duplicate tests and moved location of SQL injection test and find order test.
+",c75e5ad16b86df635f13f06b975c2691ace6013f,2017-04-28 20:00:10+02,"CONTACT.md,CONTRIBUTING.md,LICENSE,README.md,appveyor-setup.ps1,appveyor.yml,.travis.yml,.npmignore,.mention-bot,.editorconfig,codecov.yml,docker-compose.yml,.gitignore,.esdoc.json,index.js,package.json,sscce_template.js,.eslintrc.json,changelog.md,CONTRIBUTING.DOCS.md"
+"7564 Ordering with JSON attributes (#7565)
+
+* Two birds with one stone.  Adds support for ordering by JSON columns and removes vulnerability for injections on JSON attributes.
+
+* Updates the changelog for the addition of json attributes.
+
+* Fixes lint error with prefer arrow.
+
+* Removes specific error because it may change depending on dialect and engine version.
+
+* Removed duplicate tests and moved location of SQL injection test and find order test.
+
+* Optimizes item.split performance by only performing the split once.
+
+* Fixes test for sqlite dialect json.  JSON is handled differently in sqlite where the json value is extracted from a path.  If the path doesn''t exist sqlite returns null instead of throwing an error like postgres.
+",c385994028e703fd589f266d55504d305b52a8a1,2017-05-07 21:07:59+02,"package.json,.editorconfig,.esdoc.json,.eslintrc.json,.gitignore,.mention-bot,.npmignore,.travis.yml,CONTACT.md,CONTRIBUTING.DOCS.md,CONTRIBUTING.md,LICENSE,README.md,appveyor-setup.ps1,appveyor.yml,changelog.md,codecov.yml,docker-compose.yml,index.js,sscce_template.js"
+"Add warning about SQL Injection vulnerability with different SQL_MODE
+",83c5c3cda4464aee501af5111e356f6d194037fe,2017-09-21 22:03:42+02,".eslintrc,.gitignore,.eslintignore,package.json,index.js,appveyor.yml,Readme.md,License,Changes.md,.travis.yml"
+"dashboard history clean up: avoid potential SQL injections
+",a55be07ea52546568d45540c1d0a0c4a3e9f1e48,2017-11-17 08:51:50+01,".editorconfig,.bra.toml,.gitignore,.jscs.json,.jshintrc,CHANGELOG.md,CODE_OF_CONDUCT.md,Gruntfile.js,LICENSE.md,Makefile,NOTICE.md,PLUGIN_DEV.md,README.md,ROADMAP.md,appveyor.yml,build.go,circle.yml,codecov.yml,jest.config.js,karma.conf.js,latest.json,package.json,tsconfig.json,tslint.json,yarn.lock"
+"Disallow launching unknown apps via browser client.
+
+CVE-2018-1000006
+",e7074c5cdb1973ede8da4713ad079d2afa850cc8,2018-01-22 21:53:17+01,"features.gypi,filenames.gypi,package.json,electron.gyp,common.gypi,appveyor.yml,SECURITY.md,README.md,LICENSE,Jenkinsfile,.clang-format,ISSUE_TEMPLATE.md,CONTRIBUTING.md,CODE_OF_CONDUCT.md,.travis.yml,.node-version,toolchain.gypi,.gitignore,.gitmodules"
+"Disallow launching unknown apps via browser client.
+
+CVE-2018-1000006
+",ad0f44843d5bad52b09210ca019fa77308d0c778,2018-01-22 22:26:47+01,".clang-format,CODE_OF_CONDUCT.md,SECURITY.md,README.md,LICENSE,ISSUE_TEMPLATE.md,.gitmodules,.gitignore,filenames.gypi,toolchain.gypi,package.json,electron.gyp,.travis.yml,CONTRIBUTING.md,common.gypi,appveyor.yml,.node-version"
+"Disallow launching unknown apps via browser client.
+
+CVE-2018-1000006
+",a250089a40f76726cf5980a1f454e600037835aa,2018-01-22 22:40:46+01,"toolchain.gypi,.clang-format,.dockerignore,.gitignore,.gitmodules,.node-version,.remarkrc,.travis.yml,CODE_OF_CONDUCT.md,CONTRIBUTING.md,Dockerfile,Dockerfile.circleci,Jenkinsfile,LICENSE,README.md,SECURITY.md,appveyor.yml,common.gypi,electron.gyp,features.gypi,filenames.gypi,package.json"
+"Disallow launching unknown apps via browser client.
+
+CVE-2018-1000006
+",c49cb29ddf3368daf279bd60c007f9c015bc834c,2018-01-22 23:49:30+01,"CONTRIBUTING.md,toolchain.gypi,package.json,filenames.gypi,features.gypi,electron.gyp,common.gypi,SECURITY.md,README.md,LICENSE,Jenkinsfile,Dockerfile.circleci,Dockerfile.armv7,Dockerfile.arm64,Dockerfile,CODE_OF_CONDUCT.md,.travis.yml,.remarkrc,.node-version,.gitmodules,.gitignore,.dockerignore,.clang-format"
+"Disallow launching unknown apps via browser client.
+
+CVE-2018-1000006
+",4e66fcce29c113c81fdd10d11d7071227f20acfe,2018-01-23 14:42:22+01,"APPROVAL,.travis.yml,.dockerignore,toolchain.gypi,package.json,filenames.gypi,features.gypi,electron.gyp,common.gypi,appveyor.yml,SECURITY.md,README.md,CODE_OF_CONDUCT.md,.iTPS_FD971B8E9A824E60957C79AA0A071F2A,LICENSE,Dockerfile.circleci,Dockerfile,CONTRIBUTING.md,.clang-format,.gitignore,.node-version,.gitmodules"
+"Disallow launching unknown apps via browser client.
+
+CVE-2018-1000006
+",7c61f5bbb657b83e67d51a346c8ca72b8c9c778c,2018-01-26 00:57:10+01,"LICENSE,.clang-format,.dockerignore,.gitignore,.gitmodules,.node-version,.remarkrc,.travis.yml,CODE_OF_CONDUCT.md,CONTRIBUTING.md,Dockerfile,Dockerfile.arm64,Dockerfile.armv7,Dockerfile.circleci,Jenkinsfile,README.md,SECURITY.md,common.gypi,electron.gyp,features.gypi,filenames.gypi,package.json,toolchain.gypi"
+"chore: update dependencies with CVE
+
+See:
+* https://github.com/zurb/supercollider/pull/16
+* https://github.com/zurb/panini/pull/158
+* https://github.com/zurb/foundation-docs/pull/27
+
+Update packages:
+* `handlebars`: `2.0.0`-> `4.0.1` (https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-8861)
+* `uglify-js`: `2.3.6` -> `2.8.29` (https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-8857, https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-8858)
+* `marked`: `0.3.6` -> `0.3.14` (https://nvd.nist.gov/vuln/detail/CVE-2017-1000427)
+",c19edffb8cf846010b1db58c8d81cc132535131e,2018-02-23 23:47:47+01,"package-lock.json,.editorconfig,.bowerrc,.babelrc,.jshintrc,.npmignore,.sass-lint.yml,.travis.yml,.versions,CONTRIBUTING.md,LICENSE,README.md,bower.json,browserstack.json,code-of-conduct.md,composer.json,docslink.sh,gulpfile.js,meteor-README.md,.eslintrc,package.js,package.json,sache.json,webpack.config.js,yarn.lock,.gitignore"
+"Upgrade moment for CVE-2017-18214
+
+For more info, see: https://nvd.nist.gov/vuln/detail/CVE-2017-18214
+
+This is currently triggering github security alerts on all projects using keystone 4.x",2e077d13fee24b7908371f475c67f4e83d860f94,2018-03-06 09:37:31+01,".editorconfig,.codeclimate.yml,.babelrc,yarn.lock,package.json,netlify.toml,index.js,build.js,README.md,LICENSE,HISTORY.md,CONTRIBUTING.md,.travis.yml,.npmignore,.gitignore,.eslintrc,.eslintignore"
+"Upgrade moment for CVE-2017-18214 (#4592)
+
+For more info, see: https://nvd.nist.gov/vuln/detail/CVE-2017-18214
+
+This is currently triggering github security alerts on all projects using keystone 4.x",a1333e38b45a092e2c3413f96bb5e297c8d1a957,2018-03-06 14:23:20+01,".editorconfig,.codeclimate.yml,.babelrc,yarn.lock,package.json,netlify.toml,index.js,build.js,README.md,LICENSE,HISTORY.md,CONTRIBUTING.md,.travis.yml,.npmignore,.gitignore,.eslintrc,.eslintignore"
+"Update electron (CVE-2018-1000006) and react package
+",9b2af253586982ce9f5c3ea487bdc32622797f08,2018-03-15 23:43:25+01,".gitignore,README.md,package-lock.json,.dockerignore,tslint.json,tsconfig.json,.npmrc,.nvmrc,.travis.yml,CONTRIBUTING.md,Dockerfile,LICENSE,package.json"
+"Merge pull request #1294 from railsware/security-update-npms
+
+Update electron (CVE-2018-1000006) and react package",60a23ee1a741207b0ea8639b273b05a78b94b5ce,2018-03-16 14:33:02+01,".gitignore,README.md,package-lock.json,.dockerignore,tslint.json,tsconfig.json,.npmrc,.nvmrc,.travis.yml,CONTRIBUTING.md,Dockerfile,LICENSE,package.json"
+"Fixed possible SQL injection through `ActiveRecord::findOne()`
+",b37f361ad74e531a8e3e1f34cfd17b3e0b7d8e69,2018-03-20 11:20:56+01,".php_cs,.scrutinizer.yml,.travis.yml,.dockerignore,.codeclimate.yml,phpunit.xml.dist,package.json,composer.lock,composer.json,code-of-conduct.md,README.md,LICENSE.md,Dockerfile,.editorconfig,.eslintignore,.eslintrc,.gitattributes,.gitignore,.gitlab-ci.yml"
+"Fixed possible SQL injection through
+",4608bbc8d97b381b9d1431aecf358d554bc8d47b,2018-03-20 12:51:46+01,".gitignore,.gitattributes,.gitlab-ci.yml,Dockerfile,.travis.yml,.scrutinizer.yml,phpunit.xml.dist,package.json,composer.lock,composer.json,code-of-conduct.md,README.md,LICENSE.md,.php_cs,.codeclimate.yml,.dockerignore,.editorconfig,.eslintignore,.eslintrc"
+"Fixed possible SQL injection through
+",25295129dc436a0e6b0ac454d6ca6f374c10c845,2018-03-20 13:28:46+01,"code-of-conduct.md,composer.json,composer.lock,package.json,LICENSE.md,phpunit.xml.dist,.codeclimate.yml,.dockerignore,Dockerfile,.travis.yml,.scrutinizer.yml,.gitlab-ci.yml,.gitignore,.gitattributes,.eslintrc,.eslintignore,.editorconfig,README.md"
+"Merge branch ''2.0.15-dev''
+
+* 2.0.15-dev:
+  prepare for next release
+  release version 2.0.15
+  remove ColumnSchema import from mysql Schema because it conflicts with existing class
+  Added russian docs
+  Fixed grammar
+  improved filtering condition on yii\\db\\ActiveRecord
+  Wording adjustments and doc enhancements [skip ci]
+  Fixed possible SQL injection through `ActiveRecord::findOne()`
+  Fixes #15878: Fixed migration with a comment containing an apostrophe
+
+Conflicts:
+	framework/UPGRADE.md
+",52ffaa1b25f09f34add73085adb4fd6a0f4f7139,2018-03-20 13:45:22+01,".editorconfig,.dockerignore,phpunit.xml.dist,.gitignore,.gitlab-ci.yml,.php_cs,.travis.yml,.scrutinizer.yml,Dockerfile,LICENSE.md,README.md,code-of-conduct.md,composer.json,composer.lock,package.json,.codeclimate.yml,.gitattributes,.eslintrc,.eslintignore"
+"Udate hoek (CVE-2018-3728) and remove Selenium
+",a68ebe11469f85a81640501414be171c41177b50,2018-05-07 14:34:00+02,"README.md,LICENSE,.travis.yml,.jshintrc,.npmrc,.jshintignore,.gitignore,.sass-lint.yml,package.json,package-lock.json"
+"Merge pull request #1623 from sveltejs/CVE-2018-6341
+
+Sanitize spread attributes in SSR",065d0f7411dd1df91a7d26c6a0103e2d0870cf3c,2018-08-01 23:37:57+02,".editorconfig,.eslintignore,.eslintrc.json,.flowconfig,.gitignore,.prettierrc,.travis.yml,CHANGELOG.md,LICENSE,README.md,appveyor.yml,mocha.coverage.opts,mocha.opts,package-lock.json,package.json,rollup.config.js,tsconfig.json,svelte,store.js,rollup.store.config.js"
+"Bump lodash dependency (#20892)
+
+Summary:
+Per [CVE](https://nvd.nist.gov/vuln/detail/CVE-2018-3721) warning.
+Pull Request resolved: https://github.com/facebook/react-native/pull/20892
+
+Differential Revision: D9616099
+
+Pulled By: hramos
+
+fbshipit-source-id: 245c09ca32934c5e5464f87bfca213f1b10f8fec
+",792cd0902ef834fe37c85b592f94bc9d84c5f03b,2018-08-31 21:19:04+02,"CONTRIBUTING.md,setupBabel.js,yarn.lock,.buckconfig,.buckjavaargs,.editorconfig,.eslintignore,.eslintrc,.flowconfig,.flowconfig.android,.gitattributes,.gitignore,.npmignore,.nvmrc,CODE_OF_CONDUCT.md,DockerTests.md,Jenkinsfile,LICENSE,LICENSE-docs,README.md,React.podspec,Releases.md,appveyor.yml,build.gradle,cli.js,gradlew,gradlew.bat,jest-preset.json,package.json,react.gradle,rn-cli.config.js,rn-get-polyfills.js,runXcodeTests.sh,settings.gradle"

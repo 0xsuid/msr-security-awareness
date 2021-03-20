@@ -8,6 +8,9 @@
     - For Windows OS install [Git For Windows](https://git-scm.com/download/win)
 3. [PostgreSQL 13](https://www.postgresql.org/download/) - [Direct Download](https://www.enterprisedb.com/downloads/postgres-postgresql-downloads)
 
+## OS Compatibility:
+
+- This project have been tested on **Arch Linux** & **Windows 10**, It may work on other OS.
 
 ## Database optimization (Recommended)
 
@@ -21,8 +24,12 @@
 
 2. Optimize Postgresql.conf:
 
+    - NOTE: This configurations have been created for a scenario of 1 LOCAL user with faster query execution, this config. should not be applied on production server.
+
     - Configuration for systems having 16GB RAM & SSD.
         ```
+        fsync = off
+        synchronous_commit = off
         max_connections = 40
         shared_buffers = 4GB
         huge_pages = try
@@ -31,6 +38,7 @@
         checkpoint_completion_target = 0.9
         default_statistics_target = 500
         random_page_cost = 1.0
+        max_parallel_workers_per_gather = 6
         temp_buffers = 12000MB
         work_mem = 1024MB
         checkpoint_timeout = 10min
@@ -41,6 +49,8 @@
 
     - Configuration For 8GB RAM & SSD.
         ```
+        fsync = off
+        synchronous_commit = off
         max_connections = 40
         shared_buffers = 2GB
         huge_pages = try
@@ -49,10 +59,15 @@
         checkpoint_completion_target = 0.9
         default_statistics_target = 500
         random_page_cost = 1.1
+        max_parallel_workers_per_gather = 6
+        wal_compression = on
         min_wal_size = 2GB
         max_wal_size = 6GB
         ```
 
+## Import Tables
+
+    - If you just want to bypass all process of DB import & table creation then you can just import tables from [data/tables](data/tables) folder in new database with name of "swhgd-popular-4k" and execute [process/code/update_cve.ipynb](process/code/update_cve.ipynb) to get results under [data/results](data/results).
 ## Automated Installation
 
 Download "popular-4k" Dataset, Load Dataset into Database & Create Tables(cve_revs,cve_revs_js,cve_revs_py) with the following scripts:
@@ -62,6 +77,7 @@ Database optimization is Recommended before executing scripts.
 Note: Select options one by one (in scripts) in following order:  
     1. Download Dataset(Size ~22.5GB **compressed**)  
     2. Load Dataset into Database 
+        - It is recommended to continue with **"Create Database without index"**
     3. Create Tables (cve_revs,cve_revs_js,cve_revs_py)  
     4. Download NVD & Get CVE related issues
 

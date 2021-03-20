@@ -59,6 +59,12 @@ echo Successfully Created Table cve_revs_js
 echo Creating Table cve_revs_py - est. time(~5-10 mins)
 psql -U postgres swhgd-popular-4k < %~dp0..\..\process\sql\create_table_cve_revs_py.sql
 echo Successfully Created Table cve_revs_py
+echo Creating Table cve_revs_test_js - est. time(~5-20 mins)
+psql -U postgres swhgd-popular-4k < %~dp0..\..\process\sql\modified_for_threats\create_table_cve_revs_test_js.sql
+echo Successfully Created Table cve_revs_test_js
+echo Creating Table cve_revs_test_py - est. time(~5-10 mins)
+psql -U postgres swhgd-popular-4k < %~dp0..\..\process\sql\modified_for_threats\create_table_cve_revs_test_py.sql
+echo Successfully Created Table cve_revs_test_py
 goto Menu
 
 :cveData
